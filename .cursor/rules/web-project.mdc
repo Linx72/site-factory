@@ -1,0 +1,36 @@
+---
+description: Project conventions for sites scaffolded from web-motion-starter
+globs: src/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+
+# Web project (this repo)
+
+Cloned from `web-motion-starter`. Global orchestration: `~/.cursor/skills/site-builder/SKILL.md`.
+
+## Before editing
+
+1. Read `docs/SITE-BRIEF.md` (fill if empty)
+2. Prefer sections from `docs/SECTION-CATALOG.md` — do not rewrite hero/pricing from scratch
+3. Brand: `src/lib/theme/brand-palette.css` or `npm run sync:tokens`
+
+## Structure
+
+- `src/components/sections/` — landing blocks
+- `src/components/pages/home-page.tsx` — composed landing
+- `src/lib/site-config.ts` — `siteFeatures` flags
+- `content/site.json` — nav + tagline
+
+## QA before handoff
+
+```bash
+npm run qa:all
+```
+
+## Deploy
+
+```bash
+npm run deploy
+```
+
+See `docs/DEPLOY.md`.

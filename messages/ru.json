@@ -1,0 +1,559 @@
+{
+  "Home": {
+    "hero": {
+      "eyebrow": "Web Motion Starter",
+      "title": "Красивый motion — готов к продакшену",
+      "description": "Next.js, Framer Motion, GSAP ScrollTrigger, Lenis и shadcn UI — с импортом анимаций из Figma.",
+      "primaryCta": "Начать",
+      "secondaryCta": "Компоненты",
+      "stats": {
+        "fps": { "label": "60 fps", "sub": "анимации только transform" },
+        "a11y": { "label": "Доступность", "sub": "режим reduced motion" },
+        "figma": { "label": "Figma", "sub": "MCP motion context" }
+      }
+    },
+    "header": {
+      "cta": "Начать",
+      "menu": "Меню"
+    },
+    "nav": {
+      "links": {
+        "features": "Возможности",
+        "story": "История",
+        "testimonials": "Отзывы",
+        "pricing": "Тарифы",
+        "contact": "Контакт",
+        "faq": "Вопросы",
+        "ui": "UI"
+      }
+    },
+    "footer": {
+      "tagline": "Web Motion Starter · Next.js + Framer Motion + GSAP",
+      "status": "Статус",
+      "motionLab": "Лаборатория motion",
+      "privacy": "Конфиденциальность",
+      "terms": "Условия",
+      "blog": "Блог"
+    },
+    "logos": {
+      "title": "Нам доверяют команды с отполированным UI"
+    },
+    "bento": {
+      "title": "Собрано как composable grid",
+      "subtitle": "Bento подсвечивает главный блок истории, не ломая motion-стек под ним.",
+      "tip": "Совет: дублируйте секцию и меняйте ячейки — grid spans остаются в className.",
+      "cells": {
+        "motion": {
+          "title": "Motion-система",
+          "body": "Общие Framer variants и GSAP scroll primitives — один словарь на все страницы."
+        },
+        "figma": {
+          "title": "Merge из Figma",
+          "body": "Design context + motion context по node id."
+        },
+        "shadcn": {
+          "title": "shadcn UI",
+          "body": "Dialog, sheet, tabs с доступными дефолтами."
+        },
+        "lenis": {
+          "title": "Lenis scroll",
+          "body": "Плавный wheel, синхрон с ScrollTrigger pin-секциями."
+        },
+        "dark": {
+          "title": "Тёмная тема",
+          "body": "Class-based theme с brand OKLCH tokens."
+        },
+        "ship": {
+          "title": "Быстрый запуск",
+          "body": "Scaffold из web-motion-starter, кастом секций, visual QA."
+        }
+      }
+    },
+    "scrollStory": {
+      "title": "История по скроллу",
+      "subtitleActive": "Секция закрепляется при скролле; прогресс и шаги синхронизируются с Lenis + GSAP.",
+      "subtitleReduced": "Статичный layout — motion выключен в режиме reduced motion.",
+      "stepLabel": "Шаг {n}",
+      "steps": {
+        "design": {
+          "title": "Дизайн в Figma",
+          "body": "Вёрстка, типографика и motion на одном artboard."
+        },
+        "export": {
+          "title": "Экспорт motion context",
+          "body": "Keyframes, easing и сниппеты через Figma MCP."
+        },
+        "merge": {
+          "title": "Merge в React",
+          "body": "Сопоставьте data-node-id, оберните в motion.* или GSAP timelines."
+        },
+        "ship": {
+          "title": "Запуск",
+          "body": "Lenis, fallback при reduced motion, финальная полировка shadcn UI."
+        }
+      }
+    },
+    "stats": {
+      "title": "Сделано для производительности",
+      "items": {
+        "presets": { "label": "Motion-пресетов" },
+        "latency": { "label": "Медианная задержка скролла" },
+        "a11y": { "label": "Lighthouse: доступность" },
+        "gsap": { "label": "Строк экономии vs чистый GSAP" }
+      }
+    },
+    "timeline": {
+      "title": "Дорожная карта",
+      "subtitle": "Вертикальные вехи с линией связи. Каждый пункт появляется при скролле.",
+      "items": {
+        "q1": {
+          "date": "Q1 2026",
+          "title": "Starter и motion-примитивы",
+          "body": "Framer + GSAP + Lenis, каталог секций, site-builder skill."
+        },
+        "q2": {
+          "date": "Q2 2026",
+          "title": "Синхронизация Figma-токенов",
+          "body": "Variable defs → brand-palette.css и motion CSS tokens."
+        },
+        "q3": {
+          "date": "Q3 2026",
+          "title": "Эталонные сайты",
+          "body": "Шаблоны SaaS, agency и minimal typography для агента."
+        },
+        "q4": {
+          "date": "Q4 2026",
+          "title": "Визуальная регрессия",
+          "body": "Playwright-снимки 375 / 768 / 1440 перед деплоем."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Что говорят команды",
+      "subtitle": "Паттерны, которые можно перенести в клиентские проекты без переписывания motion с нуля.",
+      "items": {
+        "elena": {
+          "quote": "Мы заменили три библиотеки анимаций этим стеком. История по скроллу наконец стала цельной.",
+          "author": "Елена В.",
+          "role": "Руководитель дизайна, Northline"
+        },
+        "marcus": {
+          "quote": "Motion context из Figma попал в React с тем же easing — keyframes больше не угадываем в DevTools.",
+          "author": "Маркус Т.",
+          "role": "Фронтенд-разработчик, Forma Labs"
+        },
+        "sofia": {
+          "quote": "Синхрон Lenis и ScrollTrigger — недостающий кусок. Pin-секции работают с первого раза.",
+          "author": "София Р.",
+          "role": "Креативный разработчик, Pixel & Co"
+        }
+      }
+    },
+    "team": {
+      "title": "Люди за проектом",
+      "subtitle": "Замените имена и био на свою команду — аватары с инициалами, пока не подключите next/image.",
+      "members": {
+        "alex": {
+          "name": "Алекс Морган",
+          "role": "Креативное направление",
+          "bio": "Визуальный язык, Figma-системы и motion-спеки для запусков клиентов."
+        },
+        "jordan": {
+          "name": "Джордан Ли",
+          "role": "Фронтенд и motion",
+          "bio": "Next.js-лендинги — Framer для UI, GSAP для scroll, Lenis для ощущения."
+        },
+        "samira": {
+          "name": "Самира Оконкво",
+          "role": "Дизайн-инжиниринг",
+          "bio": "Дизайн-токены, shadcn UI и ревью доступности перед деплоем."
+        },
+        "chris": {
+          "name": "Крис Парк",
+          "role": "Фулстек-разработчик",
+          "bio": "Convex, Stripe и формы, когда лендингу нужно больше, чем статика."
+        }
+      }
+    },
+    "features": {
+      "title": "Всё для сложных интерфейсов",
+      "subtitle": "Собирайте лендинг из примитивов, а не из разовых анимаций в каждом файле.",
+      "items": {
+        "framer": {
+          "title": "Framer Motion",
+          "body": "Декларативный UI-motion — stagger, layout, gestures, переходы страниц."
+        },
+        "gsap": {
+          "title": "GSAP ScrollTrigger",
+          "body": "Pin-секции, scrub-таймлайны, scroll-parallax."
+        },
+        "lenis": {
+          "title": "Lenis + Base UI",
+          "body": "Плавный скролл с GSAP; доступные dialog, sheet, tabs."
+        },
+        "tokens": {
+          "title": "Дизайн-токены",
+          "body": "Общие duration и easing в CSS и TypeScript."
+        },
+        "figma": {
+          "title": "Figma pipeline",
+          "body": "get_design_context + get_motion_context по node id."
+        },
+        "production": {
+          "title": "Готов к production",
+          "body": "Strict TypeScript, ESLint, секции, дружелюбные к static export."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Простые тарифы",
+      "subtitle": "Бесплатный starter для форка. Платные тарифы — через оплату Stripe при настроенном env.",
+      "checkout": {
+        "choosePlan": "Выбрать {plan}",
+        "redirecting": "Перенаправление…",
+        "unavailable": "Оплата недоступна",
+        "networkError": "Ошибка сети — попробуйте снова"
+      },
+      "plans": {
+        "starter": {
+          "name": "Старт",
+          "priceLabel": "Бесплатно",
+          "description": "Motion-примитивы и demo-секции для форка.",
+          "features": {
+            "0": "Framer + GSAP",
+            "1": "Lenis scroll",
+            "2": "6 шаблонов секций"
+          }
+        },
+        "pro": {
+          "name": "Про",
+          "priceLabel": "$29",
+          "period": "/мес",
+          "description": "Figma MCP и shadcn UI блоки.",
+          "features": {
+            "0": "Импорт motion context",
+            "1": "Dialog, sheet, tabs",
+            "2": "Scroll pin-истории",
+            "3": "Приоритетные паттерны"
+          }
+        },
+        "team": {
+          "name": "Команда",
+          "priceLabel": "$99",
+          "period": "/мес",
+          "description": "Мульти-страничные сайты с ChatPRD.",
+          "features": {
+            "0": "PRD → код",
+            "1": "Кастомные design tokens",
+            "2": "Правила команды"
+          }
+        }
+      }
+    },
+    "faq": {
+      "title": "Частые вопросы",
+      "items": {
+        "stack": {
+          "q": "Какую библиотеку анимаций выбрать?",
+          "a": "Framer Motion — для UI и layout; GSAP ScrollTrigger — для scroll-таймлайнов и pin-секций; Lenis — для плавного скролла. Стартер уже связывает их вместе."
+        },
+        "figma": {
+          "q": "Как импортировать motion из Figma?",
+          "a": "Вставьте URL макета в Cursor. Агент вызывает get_design_context и get_motion_context, затем переносит анимации по data-node-id в React."
+        },
+        "stripe": {
+          "q": "Как включить оплату через Stripe?",
+          "a": "Добавьте STRIPE_SECRET_KEY, STRIPE_PRICE_PRO, STRIPE_PRICE_TEAM и STRIPE_WEBHOOK_SECRET в env. Локально — stripe listen."
+        },
+        "a11y": {
+          "q": "А доступность?",
+          "a": "Примитивы Base UI. Lenis, GSAP pin и 3D hero отключаются в режиме reduced motion."
+        },
+        "contact": {
+          "q": "Форма подписки сохраняет данные?",
+          "a": "Да — email попадает в таблицу leads в Convex. Список на /status."
+        },
+        "convex": {
+          "q": "Куда попадают подписки после оплаты?",
+          "a": "Webhook Stripe → Convex HTTP ingest. Живая лента на /status."
+        },
+        "deploy": {
+          "q": "Можно деплоить на Vercel?",
+          "a": "Да. npm run build и переменные окружения в Vercel перед включением live-оплаты."
+        }
+      }
+    },
+    "ui": {
+      "title": "UI и motion",
+      "subtitle": "shadcn-style компоненты (Base UI) с Framer Motion tab transitions.",
+      "dialog": {
+        "trigger": "Открыть dialog",
+        "title": "Modal с motion",
+        "description": "Base UI enter/exit через data-starting-style. Дополняйте Framer для контента.",
+        "close": "Закрыть"
+      },
+      "sheet": {
+        "trigger": "Открыть sheet",
+        "title": "Боковая панель",
+        "description": "Выезжает с края — для фильтров, nav или detail views."
+      },
+      "tabs": {
+        "motion": {
+          "label": "Motion",
+          "title": "Motion-примитивы",
+          "body": "FadeIn, StaggerChildren и ScrollReveal в src/components/motion/. Компонуйте с shadcn UI."
+        },
+        "figma": {
+          "label": "Figma",
+          "title": "Figma pipeline",
+          "body": "URL Figma — get_design_context для layout, get_motion_context для keyframes. Merge по data-node-id."
+        },
+        "stack": {
+          "label": "Стек",
+          "title": "Стек",
+          "body": "Next.js 16, Framer Motion, GSAP ScrollTrigger, Lenis, Base UI + shadcn styling."
+        }
+      }
+    },
+    "contact": {
+      "title": "Будьте в курсе",
+      "description": "Паттерны motion и Figma → code. Данные в Convex — обновления live.",
+      "placeholder": "hello@studio.ru",
+      "subscribe": "Подписаться",
+      "sending": "Отправка…",
+      "success": "Вы в списке — спасибо!",
+      "exists": "Этот email уже подписан.",
+      "emailUs": "Написать нам",
+      "emailLabel": "Email",
+      "leadCount": "{count} подписчиков",
+      "genericError": "Что-то пошло не так"
+    },
+    "cta": {
+      "title": "Готовы к вашему Figma-файлу",
+      "description": "Вставьте URL дизайна в чат — motion, layout и компоненты попадут в этот стек с тем же easing и timing.",
+      "primary": "Открыть в Cursor",
+      "secondary": "Документация Figma MCP"
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Язык"
+  },
+  "MotionLab": {
+    "eyebrow": "Справочник",
+    "title": "Лаборатория motion",
+    "description": "Живые превью всех примитивов в src/components/motion/. Наведите на CTA для magnetic pull; прокрутите вниз для GSAP reveals.",
+    "backHome": "← На главную",
+    "blocks": {
+      "magneticButton": "Магнитная кнопка",
+      "textReveal": "Появление текста",
+      "staggerChildren": "Каскад дочерних",
+      "fadeIn": "Плавное появление",
+      "countUp": "Счётчик",
+      "logoMarquee": "Бегущая строка логотипов",
+      "scrollReveal": "Появление по скроллу (GSAP)",
+      "lineReveal": "Появление строк",
+      "parallaxLayer": "Параллакс-слой",
+      "scrollProgress": "Прогресс скролла",
+      "tiltCard": "3D-наклон карточки",
+      "cursorGlow": "Свечение курсора",
+      "backToTop": "Наверх",
+      "hero3d": "3D Hero (ленивая загрузка)"
+    },
+    "demos": {
+      "magneticHover": "Наведите — magnetic pull",
+      "textRevealSample": "Слова появляются по одному с blur для hero-заголовков",
+      "staggerFirst": "Первый",
+      "staggerSecond": "Второй",
+      "staggerThird": "Третий",
+      "fadeInBody": "Простой fade + подъём при монтировании",
+      "countProjects": "Проекты",
+      "countSatisfaction": "Довольных клиентов",
+      "scrollRevealBlock": "Блок {index} по скроллу — scrub с Lenis + ScrollTrigger",
+      "lineOne": "Первая строка выезжает",
+      "lineTwo": "Вторая следом",
+      "parallaxHint": "Прокрутите страницу — blob двигается по Y",
+      "scrollProgressBefore": "Тонкая primary-полоска вверху каждой страницы — в",
+      "scrollProgressCode": "MotionProvider",
+      "scrollProgressAfter": ". Прокрутите эту страницу, чтобы увидеть заполнение.",
+      "tiltTitle": "3D наклон при hover",
+      "tiltBody": "Двигайте курсор — как на карточках команды",
+      "cursorGlowBefore": "Radial glow за курсором на",
+      "cursorGlowLink": "hero главной",
+      "cursorGlowAfter": "— только desktop, выключено при prefers-reduced-motion.",
+      "backToTopBefore": "Плавающая кнопка справа внизу после ~600px — Lenis",
+      "backToTopCode": "scrollTo(0)",
+      "backToTopAfter": ".",
+      "hero3dBefore": "WebGL wireframe лениво на hero (только desktop, пропуск при",
+      "hero3dCode": "prefers-reduced-motion",
+      "hero3dMiddle": "). См.",
+      "hero3dLink": "hero главной",
+      "hero3dAfter": "."
+    }
+  },
+  "StatusPage": {
+    "title": "Статус",
+    "metaDescription": "Live-панель Convex: подписки, leads и превью CMS-контента.",
+    "convexDisabled": "Convex не настроен для этой сборки. Укажите NEXT_PUBLIC_CONVEX_URL и запустите npm run dev:convex для live-панелей.",
+    "seedAll": {
+      "title": "Инструменты разработки",
+      "hint": "Заполнить все demo-таблицы одним кликом. Сначала задайте ALLOW_DEV_SEED=true в Convex env.",
+      "button": "Заполнить все demo-данные",
+      "seeding": "Заполняем…",
+      "done": "Готово — subscriptions: {subs}, leads: {leads}, cms: {cms}",
+      "seedFailed": "Не удалось заполнить все таблицы"
+    },
+    "subscriptions": {
+      "eyebrow": "Бэкенд в реальном времени",
+      "title": "Статус подписок",
+      "description": "Данные из Convex в реальном времени — обновляются при Stripe webhooks.",
+      "active": "активна",
+      "loading": "Загрузка…",
+      "empty": "Подписок пока нет — пройдите тестовую оплату или заполните demo-данные.",
+      "seedButton": "Заполнить demo-строки",
+      "addMore": "Добавить demo-строки",
+      "seeding": "Заполняем…",
+      "seedFailed": "Не удалось заполнить"
+    },
+    "leads": {
+      "title": "Подписчики рассылки",
+      "total": "Из contact form — всего {count}",
+      "loading": "Загрузка…",
+      "empty": "Подписок пока нет — форма на главной или заполните demo-данные.",
+      "seedButton": "Заполнить demo-leads",
+      "addMore": "Добавить demo-leads",
+      "seeding": "Заполняем…",
+      "seedFailed": "Не удалось заполнить"
+    },
+    "cms": {
+      "title": "CMS-контент",
+      "descriptionOn": "Marketing strings в cmsContent — hero при NEXT_PUBLIC_CMS=true (включено)",
+      "descriptionOff": "Marketing strings в cmsContent — hero при NEXT_PUBLIC_CMS=true (выкл — включите env на home)",
+      "loading": "Загрузка…",
+      "empty": "Нет CMS rows — заполните demo hero copy или через Convex dashboard.",
+      "seedButton": "Заполнить demo CMS",
+      "reseedButton": "Перезаполнить demo CMS",
+      "seeding": "Заполняем…",
+      "seedFailed": "Не удалось заполнить",
+      "writeLocked": "Запись закрыта — включите ALLOW_DEV_SEED=true в Convex env для редактора и seed (на проде держите выкл).",
+      "openHomePreview": "Открыть главную"
+    },
+    "cmsEditor": {
+      "title": "Быстрое редактирование",
+      "hint": "Нужен ALLOW_DEV_SEED=true в Convex env. Home — NEXT_PUBLIC_CMS=true для отражения изменений.",
+      "keyLabel": "Ключ",
+      "valueLabel": "Значение",
+      "placeholder": "Новый текст…",
+      "save": "Сохранить в CMS",
+      "saving": "Сохраняем…",
+      "saved": "Сохранено — обновите главную для проверки.",
+      "saveFailed": "Не удалось сохранить",
+      "fields": {
+        "heroTitle": "Заголовок hero",
+        "heroDescription": "Описание hero",
+        "ctaTitle": "Заголовок CTA",
+        "ctaDescription": "Описание CTA"
+      }
+    }
+  },
+  "Legal": {
+    "updatedLabel": "Обновлено",
+    "backHome": "← На главную",
+    "privacyLink": "Конфиденциальность",
+    "termsLink": "Условия",
+    "privacy": {
+      "title": "Политика конфиденциальности",
+      "updatedDate": "2026-07-13",
+      "sections": {
+        "intro": {
+          "heading": "Обзор",
+          "body": "Этот демо-шаблон описывает, как проект Site Factory может обрабатывать данные. Перед продакшеном замените текст на согласованную с юристом политику."
+        },
+        "data": {
+          "heading": "Какие данные собираем",
+          "body": "Если включён Convex contact, email из формы попадает в таблицу leads. Платежи обрабатывает Stripe при настроенном checkout — номера карт на наших серверах не хранятся."
+        },
+        "cookies": {
+          "heading": "Cookies",
+          "body": "Можем использовать необходимые cookies для темы и сессии. Аналитика — только при включённом feature flag."
+        },
+        "rights": {
+          "heading": "Ваши права",
+          "body": "Можно запросить доступ или удаление leads у оператора сайта. Замените раздел под вашу юрисдикцию."
+        },
+        "contact": {
+          "heading": "Контакт",
+          "body": "Укажите email для вопросов о конфиденциальности."
+        }
+      }
+    },
+    "terms": {
+      "title": "Условия использования",
+      "updatedDate": "2026-07-13",
+      "sections": {
+        "intro": {
+          "heading": "Соглашение",
+          "body": "Используя демо-сайт, вы соглашаетесь с этими временными условиями. Перед платными услугами замените текст на юридически выверенный."
+        },
+        "use": {
+          "heading": "Допустимое использование",
+          "body": "Не злоупотребляйте формами, не пытайтесь нарушить работу сервиса и не используйте сайт в незаконных целях."
+        },
+        "liability": {
+          "heading": "Ответственность",
+          "body": "Шаблон предоставляется as-is для демонстрации. Ограничьте ответственность по совету юриста."
+        },
+        "changes": {
+          "heading": "Изменения",
+          "body": "Условия могут обновляться; дата выше — последняя правка демо-текста."
+        },
+        "contact": {
+          "heading": "Контакт",
+          "body": "Вопросы по условиям: укажите email поддержки."
+        }
+      }
+    }
+  },
+  "AboutPage": {
+    "eyebrow": "О нас",
+    "title": "Люди и ремесло за стеком",
+    "description": "Короткая страница студии из секций команды и CTA — подставьте свой бренд."
+  },
+  "CasePage": {
+    "indexEyebrow": "Работы",
+    "indexTitle": "Кейсы",
+    "indexDescription": "Страницы кейсов в content/cases/. Начните с демо-кейса.",
+    "openCase": "Открыть кейс",
+    "backToCases": "← Все кейсы",
+    "backHome": "← На главную"
+  },
+  "BlogPage": {
+    "indexEyebrow": "Журнал",
+    "indexTitle": "Блог",
+    "indexDescription": "Посты в content/blog/ — без headless CMS.",
+    "openPost": "Читать",
+    "backToBlog": "← Все посты",
+    "backHome": "← На главную"
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Страница не найдена",
+    "description": "Такого маршрута нет. Вернитесь на demo-лендинг или откройте лабораторию motion.",
+    "home": "Главная",
+    "motionLab": "Лаборатория motion"
+  },
+  "Checkout": {
+    "successTitle": "Оплата прошла успешно",
+    "successBody": "Спасибо за подписку — добро пожаловать!",
+    "dismiss": "Закрыть"
+  },
+  "A11y": {
+    "skipToContent": "Перейти к содержимому",
+    "themeToggle": "Переключить тему",
+    "themeLight": "Светлая тема",
+    "themeDark": "Тёмная тема"
+  },
+  "Loading": {
+    "ariaLabel": "Загрузка",
+    "label": "Загрузка…"
+  }
+}

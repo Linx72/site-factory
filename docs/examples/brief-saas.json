@@ -1,0 +1,32 @@
+{
+  "name": "Flowbase",
+  "slug": "client-flowbase-demo",
+  "description": "Ship product-led SaaS landings with pricing and social proof.",
+  "audience": "B2B founders and product marketers",
+  "tone": "corporate",
+  "hue": 250,
+  "chroma": 0.17,
+  "preset": "saas",
+  "pages": ["home", "privacy", "terms"],
+  "theme": "default",
+  "variants": {
+    "hero": "default",
+    "features": "bento-lite",
+    "pricing": "compare"
+  },
+  "locales": ["en"],
+  "features": {
+    "stripe": false,
+    "convex": false,
+    "contactForm": false,
+    "i18n": false,
+    "cms": false
+  },
+  "hero": {
+    "eyebrow": "Flowbase",
+    "title": "Ship PLG landings without rebuilding motion",
+    "description": "Pricing, social proof, and scroll polish — preset-driven from the Site Factory.",
+    "primaryCta": "Start free trial",
+    "secondaryCta": "See pricing"
+  }
+}

@@ -1,0 +1,28 @@
+/**
+ * Brand palette — generated/updated by scripts/sync-figma-tokens.mjs
+ * Edit hue/chroma manually or re-run sync from Figma variable JSON.
+ */
+:root {
+  --brand-hue: 235;
+  --brand-chroma: 0.07;
+  --brand-lightness: 0.38;
+
+  --primary: oklch(var(--brand-lightness) var(--brand-chroma) var(--brand-hue));
+  --primary-foreground: oklch(0.985 0.01 var(--brand-hue));
+  --ring: oklch(calc(var(--brand-lightness) + 0.2) calc(var(--brand-chroma) * 0.7) var(--brand-hue));
+  --accent: oklch(0.96 0.03 var(--brand-hue));
+  --accent-foreground: oklch(0.28 0.08 var(--brand-hue));
+  --chart-1: oklch(var(--brand-lightness) var(--brand-chroma) var(--brand-hue));
+}
+
+.dark {
+  --brand-lightness: 0.8;
+  --brand-chroma: 0.06;
+
+  --primary: oklch(var(--brand-lightness) var(--brand-chroma) var(--brand-hue));
+  --primary-foreground: oklch(0.18 0.04 var(--brand-hue));
+  --ring: oklch(calc(var(--brand-lightness) - 0.1) var(--brand-chroma) var(--brand-hue));
+  --accent: oklch(0.28 0.06 var(--brand-hue));
+  --accent-foreground: oklch(0.92 0.02 var(--brand-hue));
+  --chart-1: oklch(var(--brand-lightness) var(--brand-chroma) var(--brand-hue));
+}

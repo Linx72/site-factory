@@ -1,0 +1,8 @@
+{
+  "slug": "demo",
+  "client": "Northline",
+  "title": "Scroll-led product launch",
+  "summary": "A demo case study composed from Site Factory sections — replace with a real client story.",
+  "year": "2026",
+  "sections": ["scroll-story", "timeline", "testimonials", "cta"]
+}

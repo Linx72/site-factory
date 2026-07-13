@@ -1,0 +1,30 @@
+{
+  "id": "demo-studio",
+  "title": "Aurora Labs",
+  "description": "Product studio for brands that move — strategy, design, and motion-first web experiences.",
+  "brandHue": 195,
+  "brandChroma": 0.16,
+  "sections": "hero,bento,scroll-story,features,testimonials,pricing,faq,contact,cta",
+  "headerCta": "Start a project",
+  "hero": {
+    "eyebrow": "Aurora Labs",
+    "title": "Motion-first product experiences",
+    "description": "We design and ship scroll-driven sites, launch films, and conversion paths for teams who care how things feel — not just how they look.",
+    "primaryCta": "Start a project",
+    "secondaryCta": "See our work"
+  },
+  "nav": [
+    { "label": "Work", "href": "#story" },
+    { "label": "Services", "href": "#features" },
+    { "label": "Pricing", "href": "#pricing" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "siteFeatures": {
+    "stripe": false,
+    "convex": true,
+    "contactForm": true,
+    "i18n": false,
+    "cms": false
+  },
+  "notes": "Showcase preset: scroll pin + bento + full conversion path. Good default demo for client pitches."
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Launchpad",
+  "tagline": "Ship a product launch page fast — editorial hero, features, pricing compare, FAQ, contact, and legal pages.",
+  "preset": "launch",
+  "nav": [
+    {
+      "label": "Features",
+      "href": "#features"
+    },
+    {
+      "label": "Pricing",
+      "href": "#pricing"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "sections": [
+    "features",
+    "pricing",
+    "faq",
+    "contact",
+    "cta"
+  ],
+  "headerCta": "Get early access",
+  "hero": {
+    "eyebrow": "Launchpad",
+    "title": "Launch in days, not sprints",
+    "description": "Editorial hero, feature grid, pricing compare, FAQ, and lead capture — the Site Factory launch preset for product drops.",
+    "primaryCta": "Get early access",
+    "secondaryCta": "See pricing"
+  },
+  "variants": {
+    "hero": "editorial",
+    "features": "bento-lite",
+    "pricing": "compare"
+  },
+  "theme": "editorial-ink",
+  "pages": [
+    "home",
+    "privacy",
+    "terms",
+    "about"
+  ]
+}

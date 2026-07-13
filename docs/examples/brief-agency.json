@@ -1,0 +1,30 @@
+{
+  "name": "Northline Studio",
+  "slug": "client-northline-demo",
+  "description": "Agency portfolio landing with scroll story and team.",
+  "audience": "Brand and startup founders hiring a studio",
+  "tone": "editorial",
+  "hue": 32,
+  "chroma": 0.14,
+  "preset": "agency",
+  "pages": ["home", "about", "privacy"],
+  "theme": "studio-soft",
+  "variants": {
+    "hero": "editorial"
+  },
+  "locales": ["en", "ru"],
+  "features": {
+    "stripe": false,
+    "convex": true,
+    "contactForm": true,
+    "i18n": true,
+    "cms": false
+  },
+  "hero": {
+    "eyebrow": "Northline Studio",
+    "title": "Motion-led sites for ambitious brands",
+    "description": "Scroll storytelling, team, and contact — shipped from the Site Factory agency preset.",
+    "primaryCta": "Start a project",
+    "secondaryCta": "See work"
+  }
+}

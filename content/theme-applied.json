@@ -1,0 +1,10 @@
+{
+  "appliedAt": "2026-07-13T12:01:40.450Z",
+  "theme": "editorial-ink",
+  "pack": "references/themes/editorial-ink.json",
+  "antiSlop": [
+    "Not zero-radius broadsheet with dense columns",
+    "Not purple-on-white",
+    "Not cream + terracotta serif cliché"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "product-dark",
+  "label": "Product dark",
+  "summary": "Cool teal product UI — denser radius, dark-first scheme, high-contrast primary.",
+  "antiSlop": [
+    "Not purple-on-white or indigo glow stacks",
+    "Not cream paper + terracotta",
+    "Not broadsheet / hairline newspaper layout"
+  ],
+  "brand": {
+    "hue": 195,
+    "chroma": 0.13,
+    "lightness": 0.45,
+    "darkLightness": 0.78,
+    "darkChroma": 0.11
+  },
+  "surfaces": {
+    "background": "oklch(0.17 0.02 220)",
+    "foreground": "oklch(0.96 0.01 220)",
+    "card": "oklch(0.22 0.02 220)",
+    "muted": "oklch(0.26 0.02 220)",
+    "mutedForeground": "oklch(0.72 0.02 220)",
+    "border": "oklch(1 0 0 / 12%)",
+    "secondary": "oklch(0.28 0.025 220)"
+  },
+  "darkSurfaces": {
+    "background": "oklch(0.14 0.02 220)",
+    "foreground": "oklch(0.97 0.01 220)",
+    "card": "oklch(0.2 0.025 220)",
+    "muted": "oklch(0.24 0.02 220)",
+    "mutedForeground": "oklch(0.7 0.02 220)",
+    "border": "oklch(1 0 0 / 14%)",
+    "secondary": "oklch(0.26 0.03 220)"
+  },
+  "radius": "0.5rem",
+  "fonts": {
+    "sans": "Geist",
+    "heading": "Geist",
+    "headingStack": null
+  },
+  "defaultColorScheme": "dark",
+  "forceSurfaceMode": "dark"
+}

@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://web-motion-starter.local/schemas/brief.schema.json",
+  "title": "Site Factory brief",
+  "description": "Machine-readable brief for scaffold:from-brief. Human form: docs/SITE-BRIEF.md",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "slug"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Public site / brand name"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Kebab-case folder name under ~/Projects"
+    },
+    "description": {
+      "type": "string",
+      "description": "Meta / tagline"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "tone": {
+      "type": "string",
+      "enum": ["minimal", "bold", "corporate", "playful", "editorial"]
+    },
+    "hue": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 360,
+      "description": "OKLCH brand hue"
+    },
+    "chroma": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.4
+    },
+    "preset": {
+      "type": "string",
+      "enum": ["saas", "agency", "demo-studio", "launch"],
+      "description": "Reference preset — overrides default sections when set"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hero",
+          "logos",
+          "features",
+          "bento",
+          "stats",
+          "scroll-story",
+          "timeline",
+          "testimonials",
+          "team",
+          "ui",
+          "pricing",
+          "faq",
+          "contact",
+          "cta"
+        ]
+      },
+      "uniqueItems": true,
+      "description": "Landing section ids (ignored when preset supplies sections unless forceSections)"
+    },
+    "forceSections": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, brief.sections wins over preset sections"
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "home",
+          "motion",
+          "status",
+          "privacy",
+          "terms",
+          "about",
+          "case",
+          "blog-index"
+        ]
+      },
+      "uniqueItems": true,
+      "description": "Opt-in pages from PAGE-CATALOG (written to content/site.json)"
+    },
+    "theme": {
+      "type": "string",
+      "enum": ["default", "product-dark", "studio-soft", "editorial-ink"],
+      "default": "default",
+      "description": "Theme pack id — applied via npm run theme:apply (docs/features/THEME-PACKS.md)"
+    },
+    "variants": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Section layout variants — docs/features/SECTION-VARIANTS.md",
+      "properties": {
+        "hero": {
+          "type": "string",
+          "enum": ["default", "editorial"],
+          "default": "default"
+        },
+        "features": {
+          "type": "string",
+          "enum": ["grid", "bento-lite"],
+          "default": "grid"
+        },
+        "pricing": {
+          "type": "string",
+          "enum": ["cards", "compare"],
+          "default": "cards"
+        }
+      }
+    },
+    "locales": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["en", "ru"] },
+      "minItems": 1,
+      "uniqueItems": true,
+      "default": ["en"]
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stripe": { "type": "boolean" },
+        "convex": { "type": "boolean" },
+        "contactForm": { "type": "boolean" },
+        "i18n": { "type": "boolean" },
+        "cms": { "type": "boolean" }
+      }
+    },
+    "figmaUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["default", "editorial"],
+          "description": "Shorthand; variants.hero wins when both set"
+        },
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "primaryCta": { "type": "string" },
+        "secondaryCta": { "type": "string" }
+      }
+    },
+    "projectsDir": {
+      "type": "string",
+      "description": "Override output parent (default ~/Projects)"
+    },
+    "noInstall": {
+      "type": "boolean",
+      "default": false
+    },
+    "noGit": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

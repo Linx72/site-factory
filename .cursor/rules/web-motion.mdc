@@ -1,0 +1,26 @@
+---
+description: Web motion stack and animation conventions for this project
+globs: src/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+
+# Web Motion (project)
+
+## Stack
+
+- Framer Motion — UI, layout, stagger, gestures
+- GSAP + ScrollTrigger — scroll reveals, timelines
+- Lenis — smooth scroll (`LenisProvider` in root layout)
+
+## Structure
+
+- `src/components/motion/` — reusable animated primitives
+- `src/lib/motion/` — tokens, variants, hooks
+- `src/components/providers/` — Lenis, MotionProvider
+
+## Rules
+
+- Animate `transform` and `opacity` only
+- Use `useReducedMotion()` before GSAP timelines
+- Figma URL → `get_design_context` + `get_motion_context`, merge by `data-node-id`
+- New motion primitives: docblock with purpose and reduced-motion behavior

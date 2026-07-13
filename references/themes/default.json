@@ -1,0 +1,25 @@
+{
+  "id": "default",
+  "label": "Default",
+  "summary": "Template baseline — violet-leaning brand hue kept for continuity with existing demos.",
+  "antiSlop": [
+    "Prefer switching to product-dark / studio-soft / editorial-ink for new client sites",
+    "Do not invent purple→indigo gradients on top of this pack"
+  ],
+  "brand": {
+    "hue": 264,
+    "chroma": 0.18,
+    "lightness": 0.48,
+    "darkLightness": 0.72,
+    "darkChroma": 0.14
+  },
+  "surfaces": null,
+  "darkSurfaces": null,
+  "radius": "0.625rem",
+  "fonts": {
+    "sans": "Geist",
+    "heading": "Geist",
+    "headingStack": null
+  },
+  "defaultColorScheme": "system"
+}

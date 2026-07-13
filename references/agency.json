@@ -1,0 +1,33 @@
+{
+  "id": "agency",
+  "title": "Northline Studio",
+  "description": "Creative agency landing — scroll storytelling, team, timeline, and lead capture with polished motion.",
+  "brandHue": 158,
+  "brandChroma": 0.08,
+  "theme": "studio-soft",
+  "variants": {
+    "hero": "editorial",
+    "features": "grid",
+    "pricing": "cards"
+  },
+  "sections": "hero,scroll-story,bento,timeline,team,testimonials,contact,cta",
+  "headerCta": "Book a call",
+  "hero": {
+    "eyebrow": "Northline Studio",
+    "title": "Stories that scroll like film",
+    "description": "We craft agency sites with pinned narratives, team grids, and motion that turns browsers into briefs — built on the Site Factory stack.",
+    "primaryCta": "Book a call",
+    "secondaryCta": "View work"
+  },
+  "nav": [
+    { "label": "Work", "href": "#story" },
+    { "label": "Team", "href": "#team" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "siteFeatures": {
+    "stripe": false,
+    "convex": true,
+    "contactForm": true
+  },
+  "notes": "Reference for agency/portfolio: studio-soft theme, hero/editorial, pin scroll story, team grid. Avoids cream/terracotta anti-slop."
+}

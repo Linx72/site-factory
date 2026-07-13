@@ -1,0 +1,32 @@
+{
+  "name": "Site Factory",
+  "slug": "site-factory",
+  "description": "Живой анимированный сайт по запросу — brief → preset → Vercel URL. Код ваш, motion из каталога.",
+  "audience": "Фаундеры и агентства, которым нужен Next.js лендинг с motion за дни, а не аренда Framer",
+  "tone": "editorial",
+  "hue": 215,
+  "chroma": 0.09,
+  "preset": "launch",
+  "pages": ["home", "privacy", "terms", "about"],
+  "theme": "editorial-ink",
+  "variants": {
+    "hero": "editorial",
+    "features": "bento-lite",
+    "pricing": "compare"
+  },
+  "locales": ["en"],
+  "features": {
+    "stripe": false,
+    "convex": true,
+    "contactForm": true,
+    "i18n": false,
+    "cms": false
+  },
+  "hero": {
+    "eyebrow": "Site Factory",
+    "title": "Живой анимированный сайт по запросу",
+    "description": "Бриф → пресет → проверка → живой URL. Next.js, Framer Motion и GSAP из каталога — код принадлежит вам, не редактору.",
+    "primaryCta": "Оставить бриф",
+    "secondaryCta": "Смотреть примеры"
+  }
+}

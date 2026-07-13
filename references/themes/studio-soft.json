@@ -1,0 +1,42 @@
+{
+  "id": "studio-soft",
+  "label": "Studio soft",
+  "summary": "Soft sage studio — low chroma, mist surfaces, generous radius. Calm agency feel.",
+  "antiSlop": [
+    "Not warm cream (#F4F1EA) + terracotta accent",
+    "Not purple gradients",
+    "Not dense broadsheet columns"
+  ],
+  "brand": {
+    "hue": 158,
+    "chroma": 0.08,
+    "lightness": 0.4,
+    "darkLightness": 0.76,
+    "darkChroma": 0.07
+  },
+  "surfaces": {
+    "background": "oklch(0.975 0.012 200)",
+    "foreground": "oklch(0.24 0.03 160)",
+    "card": "oklch(0.99 0.008 200)",
+    "muted": "oklch(0.94 0.015 190)",
+    "mutedForeground": "oklch(0.5 0.02 180)",
+    "border": "oklch(0.88 0.02 190)",
+    "secondary": "oklch(0.94 0.02 175)"
+  },
+  "darkSurfaces": {
+    "background": "oklch(0.18 0.02 200)",
+    "foreground": "oklch(0.95 0.01 180)",
+    "card": "oklch(0.23 0.025 200)",
+    "muted": "oklch(0.28 0.02 190)",
+    "mutedForeground": "oklch(0.7 0.02 180)",
+    "border": "oklch(1 0 0 / 12%)",
+    "secondary": "oklch(0.28 0.03 175)"
+  },
+  "radius": "0.9rem",
+  "fonts": {
+    "sans": "Geist",
+    "heading": "Geist",
+    "headingStack": null
+  },
+  "defaultColorScheme": "light"
+}

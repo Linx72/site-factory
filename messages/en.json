@@ -1,0 +1,559 @@
+{
+  "Home": {
+    "hero": {
+      "eyebrow": "Web Motion Starter",
+      "title": "Beautiful motion ready to ship",
+      "description": "Next.js, Framer Motion, GSAP ScrollTrigger, Lenis, and shadcn-style UI — wired for Figma motion import.",
+      "primaryCta": "Start building",
+      "secondaryCta": "View components",
+      "stats": {
+        "fps": { "label": "60fps", "sub": "transform-only animations" },
+        "a11y": { "label": "a11y", "sub": "prefers-reduced-motion" },
+        "figma": { "label": "Figma", "sub": "motion context MCP" }
+      }
+    },
+    "header": {
+      "cta": "Get started",
+      "menu": "Menu"
+    },
+    "nav": {
+      "links": {
+        "features": "Features",
+        "story": "Story",
+        "testimonials": "Reviews",
+        "pricing": "Pricing",
+        "contact": "Contact",
+        "faq": "FAQ",
+        "ui": "UI"
+      }
+    },
+    "footer": {
+      "tagline": "Web Motion Starter · Next.js + Framer Motion + GSAP",
+      "status": "Status",
+      "motionLab": "Motion lab",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "blog": "Blog"
+    },
+    "logos": {
+      "title": "Trusted by teams shipping polished UI"
+    },
+    "bento": {
+      "title": "Built as a composable grid",
+      "subtitle": "Bento layouts highlight one primary story block without breaking the motion stack underneath.",
+      "tip": "Tip: duplicate this section and swap cells content — grid spans stay in className.",
+      "cells": {
+        "motion": {
+          "title": "Motion system",
+          "body": "Shared Framer variants and GSAP scroll primitives — one vocabulary across pages."
+        },
+        "figma": {
+          "title": "Figma merge",
+          "body": "Design context + motion context by node id."
+        },
+        "shadcn": {
+          "title": "shadcn UI",
+          "body": "Dialogs, sheets, tabs with accessible defaults."
+        },
+        "lenis": {
+          "title": "Lenis scroll",
+          "body": "Smooth wheel synced with ScrollTrigger pin sections."
+        },
+        "dark": {
+          "title": "Dark mode",
+          "body": "Class-based theme with brand OKLCH tokens."
+        },
+        "ship": {
+          "title": "Ship faster",
+          "body": "Scaffold from web-motion-starter, customize sections, run visual QA."
+        }
+      }
+    },
+    "scrollStory": {
+      "title": "Scroll-driven storytelling",
+      "subtitleActive": "Section pins while you scroll; progress and steps scrub with Lenis + GSAP.",
+      "subtitleReduced": "Static layout — motion disabled for reduced-motion preference.",
+      "stepLabel": "Step {n}",
+      "steps": {
+        "design": {
+          "title": "Design in Figma",
+          "body": "Layout, typography, and motion on the same artboard."
+        },
+        "export": {
+          "title": "Export motion context",
+          "body": "Keyframes, easing, and snippets via Figma MCP."
+        },
+        "merge": {
+          "title": "Merge into React",
+          "body": "Match data-node-id, wrap with motion.* or GSAP timelines."
+        },
+        "ship": {
+          "title": "Ship",
+          "body": "Lenis scroll, reduced-motion fallbacks, shadcn UI polish."
+        }
+      }
+    },
+    "stats": {
+      "title": "Built for performance",
+      "items": {
+        "presets": { "label": "Motion presets" },
+        "latency": { "label": "Median scroll latency" },
+        "a11y": { "label": "Lighthouse accessibility" },
+        "gsap": { "label": "Lines saved vs raw GSAP" }
+      }
+    },
+    "timeline": {
+      "title": "Roadmap timeline",
+      "subtitle": "Vertical milestones with a connecting rail. Each item reveals on scroll.",
+      "items": {
+        "q1": {
+          "date": "Q1 2026",
+          "title": "Starter & motion primitives",
+          "body": "Framer + GSAP + Lenis providers, section catalog, site-builder skill."
+        },
+        "q2": {
+          "date": "Q2 2026",
+          "title": "Figma token sync",
+          "body": "Variable defs flow into brand-palette.css and motion CSS tokens."
+        },
+        "q3": {
+          "date": "Q3 2026",
+          "title": "Reference sites",
+          "body": "SaaS, agency, and minimal typography templates for agent copy-paste."
+        },
+        "q4": {
+          "date": "Q4 2026",
+          "title": "Visual regression",
+          "body": "Playwright snapshots at 375 / 768 / 1440 before deploy."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "What teams say",
+      "subtitle": "Patterns you can copy into client projects without rewriting motion from scratch.",
+      "items": {
+        "elena": {
+          "quote": "We replaced three animation libraries with this stack. Scroll storytelling finally feels cohesive.",
+          "author": "Elena V.",
+          "role": "Design lead, Northline"
+        },
+        "marcus": {
+          "quote": "Figma motion context landed in React with matching easing — no more guessing keyframes in DevTools.",
+          "author": "Marcus T.",
+          "role": "Frontend, Forma Labs"
+        },
+        "sofia": {
+          "quote": "Lenis + ScrollTrigger sync was the missing piece. Pin sections work on the first try.",
+          "author": "Sofia R.",
+          "role": "Creative dev, Pixel & Co"
+        }
+      }
+    },
+    "team": {
+      "title": "People behind the work",
+      "subtitle": "Replace names and bios with your team — avatars use initials until photos are wired via next/image.",
+      "members": {
+        "alex": {
+          "name": "Alex Morgan",
+          "role": "Creative direction",
+          "bio": "Leads visual language, Figma systems, and motion specs for client launches."
+        },
+        "jordan": {
+          "name": "Jordan Lee",
+          "role": "Frontend & motion",
+          "bio": "Ships Next.js landings — Framer for UI, GSAP for scroll, Lenis for feel."
+        },
+        "samira": {
+          "name": "Samira Okonkwo",
+          "role": "Design engineering",
+          "bio": "Bridges design tokens, shadcn UI, and accessibility reviews before deploy."
+        },
+        "chris": {
+          "name": "Chris Park",
+          "role": "Full stack",
+          "bio": "Convex, Stripe, and form flows when the landing needs more than static pages."
+        }
+      }
+    },
+    "features": {
+      "title": "Everything for complex interfaces",
+      "subtitle": "Compose primitives instead of one-off animations in every file.",
+      "items": {
+        "framer": {
+          "title": "Framer Motion",
+          "body": "Declarative UI motion — stagger, layout, gestures, page transitions."
+        },
+        "gsap": {
+          "title": "GSAP ScrollTrigger",
+          "body": "Pinned storytelling, scrub timelines, scroll-linked parallax."
+        },
+        "lenis": {
+          "title": "Lenis + Base UI",
+          "body": "Smooth scroll synced with GSAP; accessible dialogs, sheets, tabs."
+        },
+        "tokens": {
+          "title": "Design tokens",
+          "body": "Shared motion durations and easings in CSS + TypeScript."
+        },
+        "figma": {
+          "title": "Figma pipeline",
+          "body": "get_design_context + get_motion_context merged by node id."
+        },
+        "production": {
+          "title": "Production ready",
+          "body": "Strict TypeScript, eslint, static export friendly sections."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Simple pricing",
+      "subtitle": "Free starter to fork. Paid tiers use Stripe Checkout when env is configured.",
+      "checkout": {
+        "choosePlan": "Choose {plan}",
+        "redirecting": "Redirecting…",
+        "unavailable": "Checkout unavailable",
+        "networkError": "Network error — try again"
+      },
+      "plans": {
+        "starter": {
+          "name": "Starter",
+          "priceLabel": "Free",
+          "description": "Motion primitives and demo sections to fork.",
+          "features": {
+            "0": "Framer + GSAP setup",
+            "1": "Lenis scroll",
+            "2": "6 section templates"
+          }
+        },
+        "pro": {
+          "name": "Pro",
+          "priceLabel": "$29",
+          "period": "/mo",
+          "description": "Figma MCP workflow and shadcn UI blocks.",
+          "features": {
+            "0": "Motion context import",
+            "1": "Dialog, sheet, tabs",
+            "2": "Scroll pin storytelling",
+            "3": "Priority patterns"
+          }
+        },
+        "team": {
+          "name": "Team",
+          "priceLabel": "$99",
+          "period": "/mo",
+          "description": "Multi-page sites with ChatPRD alignment.",
+          "features": {
+            "0": "PRD → implementation",
+            "1": "Custom design tokens",
+            "2": "Team rules"
+          }
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "stack": {
+          "q": "Which animation library should I use?",
+          "a": "Framer Motion for UI and React layout; GSAP ScrollTrigger for scroll timelines and pin sections; Lenis for smooth scroll. The starter wires them together."
+        },
+        "figma": {
+          "q": "How does Figma motion import work?",
+          "a": "Paste a Figma URL in Cursor. The agent calls get_design_context for structure and get_motion_context for keyframes, then merges animations by data-node-id into React components."
+        },
+        "stripe": {
+          "q": "How do I enable Stripe checkout?",
+          "a": "Add STRIPE_SECRET_KEY, STRIPE_PRICE_PRO, STRIPE_PRICE_TEAM, and STRIPE_WEBHOOK_SECRET to .env.local. Use stripe listen for local webhooks."
+        },
+        "a11y": {
+          "q": "What about accessibility?",
+          "a": "Components use Base UI primitives. Lenis, GSAP pin, and 3D hero are disabled when prefers-reduced-motion is set."
+        },
+        "contact": {
+          "q": "Does the newsletter form save data?",
+          "a": "Yes — emails go to the Convex leads table with a live counter on the contact section. View recent signups on /status."
+        },
+        "convex": {
+          "q": "Where do subscriptions go after checkout?",
+          "a": "Stripe webhook forwards to Convex HTTP ingest. Open /status for a real-time feed."
+        },
+        "deploy": {
+          "q": "Can I deploy to Vercel?",
+          "a": "Yes. npm run build produces a static-friendly app. Set env vars in the Vercel dashboard before enabling live checkout."
+        }
+      }
+    },
+    "ui": {
+      "title": "UI + motion",
+      "subtitle": "shadcn-style components (Base UI) with Framer Motion tab transitions.",
+      "dialog": {
+        "trigger": "Open dialog",
+        "title": "Modal with motion",
+        "description": "Base UI enter/exit via data-starting-style. Pair with Framer for in-content animations.",
+        "close": "Close"
+      },
+      "sheet": {
+        "trigger": "Open sheet",
+        "title": "Side panel",
+        "description": "Slides from the edge — good for filters, nav, or detail views."
+      },
+      "tabs": {
+        "motion": {
+          "label": "Motion",
+          "title": "Motion primitives",
+          "body": "FadeIn, StaggerChildren, and ScrollReveal live in src/components/motion/. Compose them with shadcn UI for polished sections."
+        },
+        "figma": {
+          "label": "Figma",
+          "title": "Figma pipeline",
+          "body": "Paste a Figma URL — get_design_context for layout, get_motion_context for keyframes. Merge by data-node-id."
+        },
+        "stack": {
+          "label": "Stack",
+          "title": "Stack",
+          "body": "Next.js 16, Framer Motion, GSAP ScrollTrigger, Lenis, Base UI + shadcn styling."
+        }
+      }
+    },
+    "contact": {
+      "title": "Stay in the loop",
+      "description": "Motion patterns and Figma → code tips. Stored in Convex — updates live.",
+      "placeholder": "you@studio.com",
+      "subscribe": "Subscribe",
+      "sending": "Sending…",
+      "success": "You're on the list — thank you!",
+      "exists": "Already subscribed with this email.",
+      "emailUs": "Email us",
+      "emailLabel": "Email",
+      "leadCount": "{count} subscribers",
+      "genericError": "Something went wrong"
+    },
+    "cta": {
+      "title": "Ready for your Figma file",
+      "description": "Paste a design URL in chat — motion, layout, and components land in this stack with matching easing and timing.",
+      "primary": "Open in Cursor",
+      "secondary": "Figma MCP docs"
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Language"
+  },
+  "MotionLab": {
+    "eyebrow": "Reference",
+    "title": "Motion lab",
+    "description": "Live previews of every primitive in src/components/motion/. Hover CTAs to feel magnetic pull; scroll down for GSAP reveals.",
+    "backHome": "← Back to home",
+    "blocks": {
+      "magneticButton": "MagneticButton",
+      "textReveal": "TextReveal",
+      "staggerChildren": "StaggerChildren + fadeUp",
+      "fadeIn": "FadeIn",
+      "countUp": "CountUp",
+      "logoMarquee": "LogoMarquee",
+      "scrollReveal": "ScrollReveal (GSAP)",
+      "lineReveal": "LineReveal",
+      "parallaxLayer": "ParallaxLayer",
+      "scrollProgress": "ScrollProgress",
+      "tiltCard": "TiltCard",
+      "cursorGlow": "CursorGlow",
+      "backToTop": "BackToTop",
+      "hero3d": "Hero3DLazy"
+    },
+    "demos": {
+      "magneticHover": "Hover me — cursor pull",
+      "textRevealSample": "Words blur in one by one for hero headlines",
+      "staggerFirst": "First",
+      "staggerSecond": "Second",
+      "staggerThird": "Third",
+      "fadeInBody": "Simple opacity + rise on mount",
+      "countProjects": "Projects",
+      "countSatisfaction": "Satisfaction",
+      "scrollRevealBlock": "Scroll-triggered block {index} — scrubbed with Lenis + ScrollTrigger",
+      "lineOne": "Line one slides up",
+      "lineTwo": "Line two follows",
+      "parallaxHint": "Scroll this page — blob moves on Y",
+      "scrollProgressBefore": "Thin primary bar at the very top of every page — mounted in",
+      "scrollProgressCode": "MotionProvider",
+      "scrollProgressAfter": ". Scroll this page to see it fill.",
+      "tiltTitle": "3D hover tilt",
+      "tiltBody": "Move pointer — used on team cards",
+      "cursorGlowBefore": "Pointer-following radial glow on the",
+      "cursorGlowLink": "homepage hero",
+      "cursorGlowAfter": "— desktop only, off when prefers-reduced-motion.",
+      "backToTopBefore": "Floating button bottom-right after ~600px scroll — uses Lenis",
+      "backToTopCode": "scrollTo(0)",
+      "backToTopAfter": ".",
+      "hero3dBefore": "WebGL wireframe loads lazily on the home hero (desktop only, skipped when",
+      "hero3dCode": "prefers-reduced-motion",
+      "hero3dMiddle": "). See",
+      "hero3dLink": "homepage hero",
+      "hero3dAfter": "."
+    }
+  },
+  "StatusPage": {
+    "title": "Status",
+    "metaDescription": "Live Convex dashboard: subscriptions, leads, and CMS content preview.",
+    "convexDisabled": "Convex is not configured for this build. Set NEXT_PUBLIC_CONVEX_URL and run npm run dev:convex to enable live panels.",
+    "seedAll": {
+      "title": "Dev tools",
+      "hint": "Populate all demo tables at once. Set ALLOW_DEV_SEED=true in Convex env first.",
+      "button": "Seed all demo data",
+      "seeding": "Seeding…",
+      "done": "Done — subscriptions: {subs}, leads: {leads}, cms: {cms}",
+      "seedFailed": "Seed all failed"
+    },
+    "subscriptions": {
+      "eyebrow": "Live backend",
+      "title": "Subscription status",
+      "description": "Real-time data from Convex — updates when Stripe webhooks fire.",
+      "active": "active",
+      "loading": "Loading…",
+      "empty": "No subscriptions yet — complete a test checkout or seed demo data.",
+      "seedButton": "Seed demo rows",
+      "addMore": "Add more demo rows",
+      "seeding": "Seeding…",
+      "seedFailed": "Seed failed"
+    },
+    "leads": {
+      "title": "Newsletter leads",
+      "total": "From the contact form — {count} total",
+      "loading": "Loading…",
+      "empty": "No signups yet — use the form on the home page or seed demo data.",
+      "seedButton": "Seed demo leads",
+      "addMore": "Add more demo leads",
+      "seeding": "Seeding…",
+      "seedFailed": "Seed failed"
+    },
+    "cms": {
+      "title": "CMS content",
+      "descriptionOn": "Marketing strings in cmsContent — wired to hero when NEXT_PUBLIC_CMS=true (enabled)",
+      "descriptionOff": "Marketing strings in cmsContent — wired to hero when NEXT_PUBLIC_CMS=true (off — set env to apply on home)",
+      "loading": "Loading…",
+      "empty": "No CMS rows — seed demo hero copy or insert via Convex dashboard.",
+      "seedButton": "Seed demo CMS",
+      "reseedButton": "Re-seed demo CMS",
+      "seeding": "Seeding…",
+      "seedFailed": "Seed failed",
+      "writeLocked": "Writes locked — set ALLOW_DEV_SEED=true in Convex env to show the editor and seed controls (keep off on production).",
+      "openHomePreview": "Open home preview"
+    },
+    "cmsEditor": {
+      "title": "Quick edit",
+      "hint": "Requires ALLOW_DEV_SEED=true in Convex env. Home page needs NEXT_PUBLIC_CMS=true to reflect changes.",
+      "keyLabel": "Key",
+      "valueLabel": "Value",
+      "placeholder": "New copy…",
+      "save": "Save to CMS",
+      "saving": "Saving…",
+      "saved": "Saved — refresh home to see update.",
+      "saveFailed": "Save failed",
+      "fields": {
+        "heroTitle": "Hero title",
+        "heroDescription": "Hero description",
+        "ctaTitle": "CTA title",
+        "ctaDescription": "CTA description"
+      }
+    }
+  },
+  "Legal": {
+    "updatedLabel": "Last updated",
+    "backHome": "← Back to home",
+    "privacyLink": "Privacy",
+    "termsLink": "Terms",
+    "privacy": {
+      "title": "Privacy policy",
+      "updatedDate": "2026-07-13",
+      "sections": {
+        "intro": {
+          "heading": "Overview",
+          "body": "This demo template explains how a Site Factory project may handle information. Replace with your counsel-approved policy before production use."
+        },
+        "data": {
+          "heading": "Data we collect",
+          "body": "If Convex contact is enabled, we store email addresses submitted on the contact form in the leads table. Payment data is processed by Stripe when checkout is configured — we do not store card numbers on our servers."
+        },
+        "cookies": {
+          "heading": "Cookies",
+          "body": "We may use essential cookies for theme preference and session. Analytics cookies only run when an analytics feature flag is enabled."
+        },
+        "rights": {
+          "heading": "Your rights",
+          "body": "You may request access or deletion of lead records by contacting the site operator. Replace this section with jurisdiction-specific rights."
+        },
+        "contact": {
+          "heading": "Contact",
+          "body": "Update this section with your privacy contact email."
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms of service",
+      "updatedDate": "2026-07-13",
+      "sections": {
+        "intro": {
+          "heading": "Agreement",
+          "body": "By using this demo site you agree to these placeholder terms. Replace with your legal terms before offering paid services."
+        },
+        "use": {
+          "heading": "Acceptable use",
+          "body": "Do not misuse forms, attempt to disrupt the service, or use the site for unlawful purposes."
+        },
+        "liability": {
+          "heading": "Liability",
+          "body": "The template is provided as-is for demonstration. Limit liability according to your counsel’s advice."
+        },
+        "changes": {
+          "heading": "Changes",
+          "body": "We may update these terms; the date above reflects the latest revision of this demo copy."
+        },
+        "contact": {
+          "heading": "Contact",
+          "body": "Questions about these terms: replace with your support email."
+        }
+      }
+    }
+  },
+  "AboutPage": {
+    "eyebrow": "About",
+    "title": "People and craft behind the stack",
+    "description": "A short studio page composed from the team and CTA sections — swap copy for your brand."
+  },
+  "CasePage": {
+    "indexEyebrow": "Work",
+    "indexTitle": "Case studies",
+    "indexDescription": "File-based case pages under content/cases/. Start with the demo case.",
+    "openCase": "Open case",
+    "backToCases": "← All cases",
+    "backHome": "← Back to home"
+  },
+  "BlogPage": {
+    "indexEyebrow": "Journal",
+    "indexTitle": "Blog",
+    "indexDescription": "File-based posts under content/blog/. No headless CMS required.",
+    "openPost": "Read post",
+    "backToBlog": "← All posts",
+    "backHome": "← Back to home"
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Page not found",
+    "description": "This route does not exist. Head back to the demo landing or browse the motion lab.",
+    "home": "Home",
+    "motionLab": "Motion lab"
+  },
+  "Checkout": {
+    "successTitle": "Payment successful",
+    "successBody": "Thanks for subscribing — welcome aboard.",
+    "dismiss": "Dismiss"
+  },
+  "A11y": {
+    "skipToContent": "Skip to content",
+    "themeToggle": "Toggle theme",
+    "themeLight": "Switch to light mode",
+    "themeDark": "Switch to dark mode"
+  },
+  "Loading": {
+    "ariaLabel": "Loading",
+    "label": "Loading…"
+  }
+}

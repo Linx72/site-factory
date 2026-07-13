@@ -1,0 +1,35 @@
+{
+  "id": "launch",
+  "title": "Launchpad",
+  "description": "Ship a product launch page fast — editorial hero, features, pricing compare, FAQ, contact, and legal pages.",
+  "brandHue": 210,
+  "brandChroma": 0.12,
+  "theme": "editorial-ink",
+  "variants": {
+    "hero": "editorial",
+    "features": "bento-lite",
+    "pricing": "compare"
+  },
+  "sections": "hero,features,pricing,faq,contact,cta",
+  "pages": ["home", "privacy", "terms"],
+  "headerCta": "Get early access",
+  "hero": {
+    "eyebrow": "Launchpad",
+    "title": "Launch in days, not sprints",
+    "description": "Editorial hero, feature grid, pricing compare, FAQ, and lead capture — the Site Factory launch preset for product drops.",
+    "primaryCta": "Get early access",
+    "secondaryCta": "See pricing"
+  },
+  "nav": [
+    { "label": "Features", "href": "#features" },
+    { "label": "Pricing", "href": "#pricing" },
+    { "label": "FAQ", "href": "#faq" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "siteFeatures": {
+    "stripe": false,
+    "convex": true,
+    "contactForm": true
+  },
+  "notes": "Fast product launch: editorial-ink + editorial hero + bento-lite + pricing/compare + contact + privacy/terms. Avoids purple glow / cream terracotta anti-slop."
+}

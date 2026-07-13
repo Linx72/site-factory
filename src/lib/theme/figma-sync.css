@@ -1,0 +1,6 @@
+/**
+ * Optional overrides from Figma sync — import after brand-palette in globals.css if used.
+ */
+:root {
+  --radius: 0.375rem;
+}

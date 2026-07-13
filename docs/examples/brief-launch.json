@@ -1,0 +1,32 @@
+{
+  "name": "Launchpad",
+  "slug": "client-launchpad-demo",
+  "description": "Ship a product launch page in days — editorial hero, pricing compare, FAQ, contact.",
+  "audience": "Founders shipping a v1 landing",
+  "tone": "editorial",
+  "hue": 210,
+  "chroma": 0.12,
+  "preset": "launch",
+  "pages": ["home", "privacy", "terms"],
+  "theme": "editorial-ink",
+  "variants": {
+    "hero": "editorial",
+    "features": "bento-lite",
+    "pricing": "compare"
+  },
+  "locales": ["en"],
+  "features": {
+    "stripe": false,
+    "convex": true,
+    "contactForm": true,
+    "i18n": false,
+    "cms": false
+  },
+  "hero": {
+    "eyebrow": "Launchpad",
+    "title": "Launch in days, not sprints",
+    "description": "Editorial hero, features, pricing compare, FAQ, and lead capture — Site Factory launch preset.",
+    "primaryCta": "Get early access",
+    "secondaryCta": "See pricing"
+  }
+}
