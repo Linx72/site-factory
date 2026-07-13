@@ -100,6 +100,15 @@ check_patterns "status hint" "$BASE/status" \
   "Convex не подключён" \
   "Форма брифа на главной"
 
+tmp="$(mktemp)"
+fetch_to "$BASE/sitemap.xml" "$tmp"
+if [[ -s "$tmp" ]] && grep -qF "/about" "$tmp"; then
+  ok "sitemap /about"
+else
+  fail "sitemap /about -> missing at $BASE/sitemap.xml"
+fi
+rm -f "$tmp"
+
 echo ""
 if [[ "$FAIL" -eq 0 ]]; then
   ok "Storefront smoke passed"

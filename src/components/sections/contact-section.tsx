@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useMutation, useQuery } from "convex/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { FadeIn } from "@/components/motion/fade-in";
 import { TextReveal } from "@/components/motion/text-reveal";
@@ -12,6 +12,7 @@ import {
   type ContactSectionCopy,
 } from "@/lib/i18n/section-copy";
 import {
+  BRIEF_PACKAGE_EVENT,
   BRIEF_PACKAGE_STORAGE_KEY,
   formatBriefPackageLine,
   readPackageFromSearch,
@@ -62,6 +63,24 @@ function ContactFormStatic({ copy }: { copy: ContactSectionCopy }) {
   const briefPlaceholder =
     copy.briefPlaceholder ?? "Project, package, reference links…";
   const useLeadApi = siteFeatures.leadApi;
+
+  useEffect(() => {
+    function applyPackage(planName: string) {
+      setBrief((current) =>
+        current.trim() ? current : formatBriefPackageLine(planName),
+      );
+    }
+
+    function onPackageSelect(event: Event) {
+      const name = (event as CustomEvent<string>).detail;
+      if (typeof name === "string" && name.trim()) {
+        applyPackage(name.trim());
+      }
+    }
+
+    window.addEventListener(BRIEF_PACKAGE_EVENT, onPackageSelect);
+    return () => window.removeEventListener(BRIEF_PACKAGE_EVENT, onPackageSelect);
+  }, []);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

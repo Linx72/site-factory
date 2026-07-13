@@ -16,7 +16,11 @@ npm run dev                    # http://localhost:3000
 npm run qa
 npm run verify:storefront      # prod smoke (после деплоя)
 npm run storefront:health      # verify:storefront + verify:lead-api
+npm run storefront:onboard     # чеклист Resend / домен / Convex
+npm run alias:verify           # если hq не открывается
 ```
+
+Deep link на бриф с пакетом: `https://site-factory-hq.vercel.app/?package=Sprint#contact`
 
 ## Ship
 
