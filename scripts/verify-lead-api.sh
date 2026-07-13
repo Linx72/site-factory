@@ -4,7 +4,10 @@
 #
 set -euo pipefail
 
-BASE="${VERIFY_STOREFRONT_URL:-https://site-factory-hq.vercel.app}"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+
+BASE="$(bash "$ROOT/scripts/resolve-storefront-url.sh")"
 BASE="${BASE%/}"
 
 ok() { printf '\033[1;32m✓\033[0m %s\n' "$*"; }

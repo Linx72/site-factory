@@ -4,8 +4,11 @@
 #
 set -euo pipefail
 
-BASE="${VERIFY_STOREFRONT_URL:-https://site-factory-hq.vercel.app}"
-TIMEOUT="${VERIFY_PROD_TIMEOUT:-60}"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+
+BASE="$(bash "$ROOT/scripts/resolve-storefront-url.sh")"
+TIMEOUT="${VERIFY_PROD_TIMEOUT:-45}"
 RETRIES="${VERIFY_PROD_RETRIES:-5}"
 RETRY_DELAY="${VERIFY_PROD_RETRY_DELAY:-5}"
 MIN_HTML_BYTES="${VERIFY_PROD_MIN_BYTES:-4000}"
@@ -13,10 +16,11 @@ FAIL=0
 
 ok() { printf '\033[1;32m✓\033[0m %s\n' "$*"; }
 fail() { printf '\033[1;31m✗\033[0m %s\n' "$*"; FAIL=1; }
+warn() { printf '\033[1;33m!\033[0m %s\n' "$*"; }
 
 fetch_to() {
-  curl -sL --compressed --connect-timeout 20 --max-time "$TIMEOUT" \
-    --retry 2 --retry-delay 3 --retry-all-errors \
+  curl -sL --compressed --connect-timeout 12 --max-time "$TIMEOUT" \
+    --retry 2 --retry-delay 2 --retry-all-errors \
     -o "$2" "$1" 2>/dev/null || true
 }
 
@@ -62,6 +66,9 @@ check_patterns() {
 }
 
 echo "═══ Storefront smoke ($BASE) ═══"
+if [[ "$BASE" != "https://site-factory-hq.vercel.app" ]]; then
+  warn "Using fallback URL (hq alias unreachable from this runner)"
+fi
 echo ""
 
 check_patterns "home RU" "$BASE" \

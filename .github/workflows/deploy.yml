@@ -83,6 +83,7 @@ jobs:
         run: |
           npx vercel alias set "${{ steps.deploy.outputs.url }}" site-factory-hq.vercel.app \
             --token=${{ secrets.VERCEL_TOKEN }}
+          bash scripts/verify-alias.sh "${{ steps.deploy.outputs.url }}"
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

@@ -89,6 +89,7 @@ URL=$(echo "$OUT" | grep -Eo 'https://[a-zA-Z0-9._-]+\.vercel\.app' | head -1 ||
 if [[ -n "$URL" ]]; then
   log "Alias site-factory-hq.vercel.app → $URL"
   vercel_cmd alias set "$URL" site-factory-hq.vercel.app --scope fly-type 2>&1 || true
+  bash "$ROOT/scripts/verify-alias.sh" "$URL" || true
 fi
 if echo "$OUT" | grep -q '"status": "ok"'; then
   ok "Production deploy ready"
