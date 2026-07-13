@@ -92,10 +92,17 @@ export type TeamSectionCopy = {
   members: TeamMemberCopy[];
 };
 
+export type FeatureLinkCopy = {
+  label: string;
+  href: string;
+};
+
 export type FeatureItemCopy = {
   id: string;
   title: string;
   body: string;
+  /** Optional outbound refs (e.g. live preset demos). */
+  links?: FeatureLinkCopy[];
 };
 
 export type FeaturesSectionCopy = {
@@ -354,7 +361,12 @@ export const defaultFeatureItems: FeatureItemCopy[] = [
   {
     id: "production",
     title: "Живые примеры",
-    body: "site-ref-saas · site-ref-agency · site-ref-launch — смотрите до заказа.",
+    body: "SaaS, Agency и Launch — смотрите до заказа.",
+    links: [
+      { label: "SaaS", href: "https://site-ref-saas.vercel.app" },
+      { label: "Agency", href: "https://site-ref-agency.vercel.app" },
+      { label: "Launch", href: "https://site-ref-launch.vercel.app" },
+    ],
   },
 ];
 

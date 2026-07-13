@@ -10,6 +10,7 @@ import {
   defaultFaqItems,
   type FaqItemCopy,
 } from "@/lib/i18n/section-copy";
+import { linkifyText } from "@/lib/linkify";
 
 type FaqSectionProps = {
   title?: string;
@@ -34,7 +35,7 @@ export function FaqSection({
             {items.map((item) => (
               <AccordionItem key={item.id} value={item.id}>
                 <AccordionTrigger>{item.q}</AccordionTrigger>
-                <AccordionContent>{item.a}</AccordionContent>
+                <AccordionContent>{linkifyText(item.a)}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

@@ -5,7 +5,6 @@ import { TextReveal } from "@/components/motion/text-reveal";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -13,6 +12,7 @@ import {
   defaultFeaturesCopy,
   type FeaturesSectionCopy,
   type FeatureItemCopy,
+  type FeatureLinkCopy,
 } from "@/lib/i18n/section-copy";
 import type { FeaturesVariant } from "@/lib/section-variants";
 import { resolveImplementedFeaturesVariant } from "@/lib/section-variants";
@@ -23,6 +23,33 @@ type FeaturesSectionProps = {
   /** Layout: `grid` (default cards) | `bento-lite` (featured + asymmetric). */
   variant?: FeaturesVariant;
 };
+
+function FeatureLinks({ links }: { links: FeatureLinkCopy[] }) {
+  return (
+    <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+      {links.map((link) => (
+        <a
+          key={link.href}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function FeatureBody({ body, links }: Pick<FeatureItemCopy, "body" | "links">) {
+  return (
+    <>
+      <p>{body}</p>
+      {links?.length ? <FeatureLinks links={links} /> : null}
+    </>
+  );
+}
 
 function FeaturesHeader({ copy }: { copy: FeaturesSectionCopy }) {
   return (
@@ -45,7 +72,9 @@ function FeaturesGrid({ items }: { items: FeatureItemCopy[] }) {
           <Card className="h-full transition-colors hover:bg-muted/30">
             <CardHeader>
               <CardTitle>{feature.title}</CardTitle>
-              <CardDescription>{feature.body}</CardDescription>
+              <div className="text-sm text-muted-foreground">
+                <FeatureBody body={feature.body} links={feature.links} />
+              </div>
             </CardHeader>
             <CardContent />
           </Card>
@@ -75,9 +104,9 @@ function FeaturesBentoLite({ items }: { items: FeatureItemCopy[] }) {
           <h3 className="relative text-xl font-semibold tracking-tight md:text-2xl">
             {featured.title}
           </h3>
-          <p className="relative mt-3 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-            {featured.body}
-          </p>
+          <div className="relative mt-3 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
+            <FeatureBody body={featured.body} links={featured.links} />
+          </div>
         </article>
       </ScrollReveal>
 
@@ -92,9 +121,9 @@ function FeaturesBentoLite({ items }: { items: FeatureItemCopy[] }) {
             )}
           >
             <h3 className="text-base font-semibold tracking-tight">{feature.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {feature.body}
-            </p>
+            <div className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <FeatureBody body={feature.body} links={feature.links} />
+            </div>
           </article>
         </ScrollReveal>
       ))}
