@@ -67,7 +67,21 @@ jobs:
           NEXT_PUBLIC_SITE_URL: "https://site-factory-hq.vercel.app"
 
       - name: Deploy prebuilt
-        run: npx vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        id: deploy
+        run: |
+          set -euo pipefail
+          OUT=$(npx vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} 2>&1)
+          echo "$OUT"
+          URL=$(echo "$OUT" | grep -Eo 'https://site-factory-[a-z0-9]+-fly-type\.vercel\.app' | head -1)
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Alias site-factory-hq
+        run: |
+          npx vercel alias set "${{ steps.deploy.outputs.url }}" site-factory-hq.vercel.app \
+            --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
