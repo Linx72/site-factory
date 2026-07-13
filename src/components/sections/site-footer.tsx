@@ -5,7 +5,7 @@ import {
   type FooterCopy,
   type NavLinkCopy,
 } from "@/lib/i18n/section-copy";
-import { isPageEnabled } from "@/lib/site-pages";
+import { isPageEnabled } from "@/lib/site-pages-client";
 import { getNavLinks } from "@/lib/site-content";
 
 type SiteFooterProps = {
