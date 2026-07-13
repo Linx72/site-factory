@@ -1,0 +1,25 @@
+{
+  "sourceBrief": "/Users/amoros/Projects/web-motion-starter/docs/examples/brief-site-factory.json",
+  "appliedAt": "2026-07-13T12:01:53.712Z",
+  "pages": [
+    "home",
+    "privacy",
+    "terms",
+    "about"
+  ],
+  "theme": "editorial-ink",
+  "locales": [
+    "en"
+  ],
+  "features": {
+    "stripe": false,
+    "convex": true,
+    "contactForm": true,
+    "i18n": false,
+    "cms": false
+  },
+  "notes": [
+    "pages[] / variants written to content/site.json when present in brief.",
+    "theme packs apply in Roadmap F Day 9 — hue/chroma already applied via scaffold."
+  ]
+}

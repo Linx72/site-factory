@@ -8,6 +8,7 @@ import {
   type PricingCheckoutCopy,
 } from "@/lib/i18n/section-copy";
 import { Button } from "@/components/ui/button";
+import { siteFeatures } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 type CheckoutButtonProps = {
@@ -21,8 +22,8 @@ type CheckoutButtonProps = {
 };
 
 /**
- * Starts Stripe Checkout for paid plans. Starter scrolls to #ui.
- * Shows inline error when Stripe env is missing (demo mode).
+ * Starts Stripe Checkout for paid plans when configured.
+ * Without Stripe (or Starter): smooth-scroll to #contact — factory storefront path.
  */
 export function CheckoutButton({
   planId,
@@ -39,8 +40,8 @@ export function CheckoutButton({
   async function handleClick() {
     setError(null);
 
-    if (planId === "starter") {
-      document.querySelector("#ui")?.scrollIntoView({ behavior: "smooth" });
+    if (planId === "starter" || !siteFeatures.stripe) {
+      document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
       return;
     }
 

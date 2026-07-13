@@ -70,7 +70,7 @@ function HeroActions({
         variant="outline"
         size="lg"
         className="rounded-full px-6"
-        render={<a href="#story" />}
+        render={<a href="#features" />}
       >
         {secondaryCta}
       </Button>

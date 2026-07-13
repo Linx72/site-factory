@@ -1,14 +1,14 @@
 {
-  "name": "Launchpad",
-  "tagline": "Ship a product launch page fast — editorial hero, features, pricing compare, FAQ, contact, and legal pages.",
+  "name": "Site Factory",
+  "tagline": "Живой анимированный сайт по запросу — brief → preset → Vercel URL. Код ваш, motion из каталога.",
   "preset": "launch",
   "nav": [
     {
-      "label": "Features",
+      "label": "Как устроено",
       "href": "#features"
     },
     {
-      "label": "Pricing",
+      "label": "Пакеты",
       "href": "#pricing"
     },
     {
@@ -16,7 +16,7 @@
       "href": "#faq"
     },
     {
-      "label": "Contact",
+      "label": "Бриф",
       "href": "#contact"
     }
   ],
@@ -27,13 +27,13 @@
     "contact",
     "cta"
   ],
-  "headerCta": "Get early access",
+  "headerCta": "Оставить бриф",
   "hero": {
-    "eyebrow": "Launchpad",
-    "title": "Launch in days, not sprints",
-    "description": "Editorial hero, feature grid, pricing compare, FAQ, and lead capture — the Site Factory launch preset for product drops.",
-    "primaryCta": "Get early access",
-    "secondaryCta": "See pricing"
+    "eyebrow": "Site Factory",
+    "title": "Живой анимированный сайт по запросу",
+    "description": "Бриф → пресет → проверка → живой URL. Next.js, Framer Motion и GSAP из каталога — код принадлежит вам, не редактору.",
+    "primaryCta": "Оставить бриф",
+    "secondaryCta": "Смотреть примеры"
   },
   "variants": {
     "hero": "editorial",

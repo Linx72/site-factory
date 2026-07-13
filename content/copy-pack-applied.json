@@ -1,0 +1,13 @@
+{
+  "appliedAt": "2026-07-13T12:01:53.808Z",
+  "brief": "site-factory",
+  "fields": [
+    "Home.hero.*",
+    "Home.header.cta",
+    "Home.footer.tagline",
+    "site.json",
+    "site-config"
+  ],
+  "ruStub": true,
+  "note": "Do not invent sections outside brief.sections / preset. Run verify:messages after edits."
+}

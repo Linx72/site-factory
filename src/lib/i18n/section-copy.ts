@@ -320,130 +320,128 @@ export const TEAM_INITIALS: Record<(typeof TEAM_MEMBER_IDS)[number], string> = {
 export const defaultFeatureItems: FeatureItemCopy[] = [
   {
     id: "framer",
-    title: "Framer Motion",
-    body: "Declarative UI motion — stagger, layout, gestures, page transitions.",
+    title: "Каталог секций",
+    body: "Hero, features, pricing, FAQ, contact — комнаты завода. Варианты editorial / bento-lite / compare.",
   },
   {
     id: "gsap",
-    title: "GSAP ScrollTrigger",
-    body: "Pinned storytelling, scrub timelines, scroll-linked parallax.",
+    title: "Живой motion",
+    body: "Framer Motion для UI, GSAP ScrollTrigger для scroll-кино, Lenis для плавного скролла.",
   },
   {
     id: "lenis",
-    title: "Lenis + Base UI",
-    body: "Smooth scroll synced with GSAP; accessible dialogs, sheets, tabs.",
+    title: "Brief → URL",
+    body: "brief.json → scaffold → QA gates → Vercel. Предсказуемый конвейер, не импровизация.",
   },
   {
     id: "tokens",
-    title: "Design tokens",
-    body: "Shared motion durations and easings in CSS + TypeScript.",
+    title: "Пресеты",
+    body: "SaaS, Agency, Launch, Demo — готовые планировки с theme packs.",
   },
   {
     id: "figma",
-    title: "Figma pipeline",
-    body: "get_design_context + get_motion_context merged by node id.",
+    title: "Код ваш",
+    body: "Next.js на Vercel. Не lock-in Framer: репозиторий и домен у вас.",
   },
   {
     id: "production",
-    title: "Production ready",
-    body: "Strict TypeScript, eslint, static export friendly sections.",
+    title: "Живые примеры",
+    body: "site-ref-saas · site-ref-agency · site-ref-launch — смотрите до заказа.",
   },
 ];
 
 export const defaultFeaturesCopy: FeaturesSectionCopy = {
-  title: "Everything for complex interfaces",
-  subtitle: "Compose primitives instead of one-off animations in every file.",
+  title: "Как устроена фабрика",
+  subtitle: "Не рисуем сайт с нуля — собираем из каталога секций, тем и пресетов.",
   items: defaultFeatureItems,
 };
 
 export const defaultPricingCopy: PricingSectionCopy = {
-  title: "Simple pricing",
-  subtitle: "Free starter to fork. Paid tiers use Stripe Checkout when env is configured.",
+  title: "Пакеты",
+  subtitle: "Фиксированные сроки. Кнопка ведёт к форме брифа.",
   plans: {
     starter: {
-      name: "Starter",
-      priceLabel: "Free",
-      description: "Motion primitives and demo sections to fork.",
-      features: ["Framer + GSAP setup", "Lenis scroll", "6 section templates"],
+      name: "Flash",
+      priceLabel: "~15 мин–1 день",
+      description: "Каркас + тема + variants + публичный URL. Без глубокой полировки текстов.",
+      features: ["brief → scaffold", "preset + theme pack", "QA + Vercel preview"],
     },
     pro: {
-      name: "Pro",
-      priceLabel: "$29",
-      period: "/mo",
-      description: "Figma MCP workflow and shadcn UI blocks.",
+      name: "Sprint",
+      priceLabel: "~3 дня",
+      description: "Flash + тексты, legal-страницы, форма заявок, домен.",
       features: [
-        "Motion context import",
-        "Dialog, sheet, tabs",
-        "Scroll pin storytelling",
-        "Priority patterns",
+        "Copy EN (и RU по запросу)",
+        "privacy / terms",
+        "contact + Convex",
+        "custom domain",
       ],
     },
     team: {
-      name: "Team",
-      priceLabel: "$99",
-      period: "/mo",
-      description: "Multi-page sites with ChatPRD alignment.",
-      features: ["PRD → implementation", "Custom design tokens", "Team rules"],
+      name: "Build",
+      priceLabel: "~2 недели",
+      description: "Sprint + Stripe, CMS-lite, analytics, Resend, мультистраницы.",
+      features: ["Stripe checkout", "CMS / i18n по нужде", "analytics + Resend"],
     },
   },
   checkout: {
-    choosePlan: "Choose {plan}",
-    redirecting: "Redirecting…",
-    unavailable: "Checkout unavailable",
-    networkError: "Network error — try again",
+    choosePlan: "Оставить бриф — {plan}",
+    redirecting: "Секунду…",
+    unavailable: "Напишите в форме ниже",
+    networkError: "Ошибка сети — попробуйте форму контакта",
   },
 };
 
 export const defaultFaqItems: FaqItemCopy[] = [
   {
     id: "stack",
-    q: "Which animation library should I use?",
-    a: "Framer Motion for UI and React layout; GSAP ScrollTrigger for scroll timelines and pin sections; Lenis for smooth scroll. The starter wires them together.",
+    q: "Это как Framer или Lovable?",
+    a: "Нет. Вы получаете свой Next.js-код с motion-стеком фабрики. Не аренда редактора и не vibe-app без каталога.",
   },
   {
     id: "figma",
-    q: "How does Figma motion import work?",
-    a: "Paste a Figma URL in Cursor. The agent calls get_design_context for structure and get_motion_context for keyframes, then merges animations by data-node-id into React components.",
+    q: "Можно из Figma?",
+    a: "Да — в Cursor через Figma MCP. Структура и motion подтягиваются в секции каталога.",
   },
   {
     id: "stripe",
-    q: "How do I enable Stripe checkout?",
-    a: "Add STRIPE_SECRET_KEY, STRIPE_PRICE_PRO, STRIPE_PRICE_TEAM, and STRIPE_WEBHOOK_SECRET to .env.local. Use stripe listen for local webhooks.",
+    q: "Что входит в Flash?",
+    a: "Пресет, theme, variants, базовые тексты, QA и live URL. Глубокий копирайт, домен и бэкенд — в Sprint/Build.",
   },
   {
     id: "a11y",
-    q: "What about accessibility?",
-    a: "Components use Base UI primitives. Lenis, GSAP pin, and 3D hero are disabled when prefers-reduced-motion is set.",
+    q: "Анимации не сломают доступность?",
+    a: "Lenis, pin и 3D отключаются при prefers-reduced-motion. UI на Base UI / shadcn.",
   },
   {
     id: "contact",
-    q: "Does the newsletter form save data?",
-    a: "Yes — emails go to the Convex leads table with a live counter on the contact section. View recent signups on /status.",
+    q: "Как оставить заявку?",
+    a: "Форма ниже (#contact). Email попадает в очередь leads; ответ обычно в течение рабочего дня.",
   },
   {
     id: "convex",
-    q: "Where do subscriptions go after checkout?",
-    a: "Stripe webhook forwards to Convex HTTP ingest. Open /status for a real-time feed.",
+    q: "Где примеры?",
+    a: "https://site-ref-saas.vercel.app · https://site-ref-agency.vercel.app · https://site-ref-launch.vercel.app · https://web-motion-starter.vercel.app",
   },
   {
     id: "deploy",
-    q: "Can I deploy to Vercel?",
-    a: "Yes. npm run build produces a static-friendly app. Set env vars in the Vercel dashboard before enabling live checkout.",
+    q: "Кто владеет доменом и репо?",
+    a: "Вы. Фабрика собирает и выкладывает; доступы Vercel/GitHub передаём при сдаче.",
   },
 ];
 
 export const defaultContactCopy: ContactSectionCopy = {
-  title: "Stay in the loop",
-  description: "Motion patterns and Figma → code tips. Stored in Convex — updates live.",
-  placeholder: "you@studio.com",
-  subscribe: "Subscribe",
-  sending: "Sending…",
-  success: "You're on the list — thank you!",
-  exists: "Already subscribed with this email.",
-  emailUs: "Email us",
+  title: "Оставить бриф",
+  description: "Коротко: бренд, ниша, пакет (Flash/Sprint/Build), ссылки на референсы. Ответим со следующим шагом.",
+  placeholder: "you@company.com",
+  subscribe: "Отправить",
+  sending: "Отправляем…",
+  success: "Заявка принята — скоро напишем.",
+  exists: "Этот email уже в очереди.",
+  emailUs: "Или напишите напрямую",
   emailLabel: "Email",
-  leadCount: "{count} subscribers",
-  genericError: "Something went wrong",
+  leadCount: "{count} заявок в очереди",
+  genericError: "Что-то пошло не так — попробуйте ещё раз",
 };
 
 export const defaultStatsCopy: StatsSectionCopy = {
@@ -676,7 +674,7 @@ export const defaultMotionLabIntro: MotionLabIntroCopy = {
 };
 
 export const defaultFooterCopy: FooterCopy = {
-  tagline: "Web Motion Starter · Next.js + Framer Motion + GSAP",
+  tagline: "Site Factory · brief → preset → live URL · код ваш",
   status: "Status",
   motionLab: "Motion lab",
   statusHref: "/status",
@@ -700,9 +698,9 @@ export const defaultNavLabels: Record<(typeof NAV_LINK_KEYS)[number], string> = 
 };
 
 export const defaultCtaCopy: CtaSectionCopy = {
-  title: "Ready for your Figma file",
+  title: "Готовы к живому URL?",
   description:
-    "Paste a design URL in chat — motion, layout, and components land in this stack with matching easing and timing.",
-  primary: "Open in Cursor",
-  secondary: "Figma MCP docs",
+    "Выберите пакет, оставьте email — соберём сайт из каталога секций с motion, обкатанным на live-референсах.",
+  primary: "К форме брифа",
+  secondary: "Эталон завода",
 };

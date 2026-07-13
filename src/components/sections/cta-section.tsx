@@ -40,7 +40,11 @@ function CtaSectionView({ title, description, buttons }: CtaViewProps) {
         />
         <p className="mx-auto mt-4 max-w-lg text-muted-foreground">{description}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Button size="lg" className="rounded-full px-6">
+          <Button
+            size="lg"
+            className="rounded-full px-6"
+            render={<a href="#contact" />}
+          >
             {buttons.primary}
           </Button>
           <Button
@@ -49,7 +53,7 @@ function CtaSectionView({ title, description, buttons }: CtaViewProps) {
             className="rounded-full px-6"
             render={
               <a
-                href="https://github.com/figma/mcp-server-guide"
+                href="https://web-motion-starter.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
               />

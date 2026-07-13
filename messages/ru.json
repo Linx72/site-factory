@@ -1,19 +1,28 @@
 {
   "Home": {
     "hero": {
-      "eyebrow": "Web Motion Starter",
-      "title": "Красивый motion — готов к продакшену",
-      "description": "Next.js, Framer Motion, GSAP ScrollTrigger, Lenis и shadcn UI — с импортом анимаций из Figma.",
-      "primaryCta": "Начать",
-      "secondaryCta": "Компоненты",
+      "eyebrow": "Site Factory",
+      "title": "Живой анимированный сайт по запросу",
+      "description": "Бриф → пресет → проверка → живой URL. Next.js, Framer Motion и GSAP из каталога — код принадлежит вам, не редактору.",
+      "primaryCta": "Оставить бриф",
+      "secondaryCta": "Смотреть примеры",
       "stats": {
-        "fps": { "label": "60 fps", "sub": "анимации только transform" },
-        "a11y": { "label": "Доступность", "sub": "режим reduced motion" },
-        "figma": { "label": "Figma", "sub": "MCP motion context" }
+        "fps": {
+          "label": "60 fps",
+          "sub": "анимации только transform"
+        },
+        "a11y": {
+          "label": "Доступность",
+          "sub": "режим reduced motion"
+        },
+        "figma": {
+          "label": "Figma",
+          "sub": "MCP motion context"
+        }
       }
     },
     "header": {
-      "cta": "Начать",
+      "cta": "Оставить бриф",
       "menu": "Меню"
     },
     "nav": {
@@ -28,7 +37,7 @@
       }
     },
     "footer": {
-      "tagline": "Web Motion Starter · Next.js + Framer Motion + GSAP",
+      "tagline": "Site Factory · Живой анимированный сайт по запросу — brief → preset → Vercel URL. Код ваш, motion из каталога.",
       "status": "Статус",
       "motionLab": "Лаборатория motion",
       "privacy": "Конфиденциальность",
@@ -96,10 +105,18 @@
     "stats": {
       "title": "Сделано для производительности",
       "items": {
-        "presets": { "label": "Motion-пресетов" },
-        "latency": { "label": "Медианная задержка скролла" },
-        "a11y": { "label": "Lighthouse: доступность" },
-        "gsap": { "label": "Строк экономии vs чистый GSAP" }
+        "presets": {
+          "label": "Motion-пресетов"
+        },
+        "latency": {
+          "label": "Медианная задержка скролла"
+        },
+        "a11y": {
+          "label": "Lighthouse: доступность"
+        },
+        "gsap": {
+          "label": "Строк экономии vs чистый GSAP"
+        }
       }
     },
     "timeline": {

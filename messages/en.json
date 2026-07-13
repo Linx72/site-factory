@@ -1,34 +1,43 @@
 {
   "Home": {
     "hero": {
-      "eyebrow": "Web Motion Starter",
-      "title": "Beautiful motion ready to ship",
-      "description": "Next.js, Framer Motion, GSAP ScrollTrigger, Lenis, and shadcn-style UI — wired for Figma motion import.",
-      "primaryCta": "Start building",
-      "secondaryCta": "View components",
+      "eyebrow": "Site Factory",
+      "title": "Живой анимированный сайт по запросу",
+      "description": "Бриф → пресет → проверка → живой URL. Next.js, Framer Motion и GSAP из каталога — код принадлежит вам, не редактору.",
+      "primaryCta": "Оставить бриф",
+      "secondaryCta": "Смотреть примеры",
       "stats": {
-        "fps": { "label": "60fps", "sub": "transform-only animations" },
-        "a11y": { "label": "a11y", "sub": "prefers-reduced-motion" },
-        "figma": { "label": "Figma", "sub": "motion context MCP" }
+        "fps": {
+          "label": "60fps",
+          "sub": "transform-only animations"
+        },
+        "a11y": {
+          "label": "a11y",
+          "sub": "prefers-reduced-motion"
+        },
+        "figma": {
+          "label": "Figma",
+          "sub": "motion context MCP"
+        }
       }
     },
     "header": {
-      "cta": "Get started",
+      "cta": "Оставить бриф",
       "menu": "Menu"
     },
     "nav": {
       "links": {
-        "features": "Features",
+        "features": "Как устроено",
         "story": "Story",
         "testimonials": "Reviews",
-        "pricing": "Pricing",
-        "contact": "Contact",
+        "pricing": "Пакеты",
+        "contact": "Бриф",
         "faq": "FAQ",
         "ui": "UI"
       }
     },
     "footer": {
-      "tagline": "Web Motion Starter · Next.js + Framer Motion + GSAP",
+      "tagline": "Site Factory · brief → preset → live URL · код ваш",
       "status": "Status",
       "motionLab": "Motion lab",
       "privacy": "Privacy",
@@ -96,10 +105,18 @@
     "stats": {
       "title": "Built for performance",
       "items": {
-        "presets": { "label": "Motion presets" },
-        "latency": { "label": "Median scroll latency" },
-        "a11y": { "label": "Lighthouse accessibility" },
-        "gsap": { "label": "Lines saved vs raw GSAP" }
+        "presets": {
+          "label": "Motion presets"
+        },
+        "latency": {
+          "label": "Median scroll latency"
+        },
+        "a11y": {
+          "label": "Lighthouse accessibility"
+        },
+        "gsap": {
+          "label": "Lines saved vs raw GSAP"
+        }
       }
     },
     "timeline": {
@@ -176,110 +193,108 @@
       }
     },
     "features": {
-      "title": "Everything for complex interfaces",
-      "subtitle": "Compose primitives instead of one-off animations in every file.",
+      "title": "Как устроена фабрика",
+      "subtitle": "Не рисуем сайт с нуля — собираем из каталога секций, тем и пресетов.",
       "items": {
         "framer": {
-          "title": "Framer Motion",
-          "body": "Declarative UI motion — stagger, layout, gestures, page transitions."
+          "title": "Каталог секций",
+          "body": "Hero, features, pricing, FAQ, contact — комнаты завода. Варианты editorial / bento-lite / compare."
         },
         "gsap": {
-          "title": "GSAP ScrollTrigger",
-          "body": "Pinned storytelling, scrub timelines, scroll-linked parallax."
+          "title": "Живой motion",
+          "body": "Framer Motion для UI, GSAP ScrollTrigger для scroll-кино, Lenis для плавного скролла."
         },
         "lenis": {
-          "title": "Lenis + Base UI",
-          "body": "Smooth scroll synced with GSAP; accessible dialogs, sheets, tabs."
+          "title": "Brief → URL",
+          "body": "brief.json → scaffold → QA gates → Vercel. Предсказуемый конвейер, не импровизация."
         },
         "tokens": {
-          "title": "Design tokens",
-          "body": "Shared motion durations and easings in CSS + TypeScript."
+          "title": "Пресеты",
+          "body": "SaaS, Agency, Launch, Demo — готовые планировки с theme packs."
         },
         "figma": {
-          "title": "Figma pipeline",
-          "body": "get_design_context + get_motion_context merged by node id."
+          "title": "Код ваш",
+          "body": "Next.js на Vercel. Не lock-in Framer: репозиторий и домен у вас."
         },
         "production": {
-          "title": "Production ready",
-          "body": "Strict TypeScript, eslint, static export friendly sections."
+          "title": "Живые примеры",
+          "body": "site-ref-saas · site-ref-agency · site-ref-launch — смотрите до заказа."
         }
       }
     },
     "pricing": {
-      "title": "Simple pricing",
-      "subtitle": "Free starter to fork. Paid tiers use Stripe Checkout when env is configured.",
+      "title": "Пакеты",
+      "subtitle": "Фиксированные сроки. Цена — по согласованию; кнопка ведёт к брифу.",
       "checkout": {
-        "choosePlan": "Choose {plan}",
-        "redirecting": "Redirecting…",
-        "unavailable": "Checkout unavailable",
-        "networkError": "Network error — try again"
+        "choosePlan": "Оставить бриф — {plan}",
+        "redirecting": "Секунду…",
+        "unavailable": "Напишите в форме ниже",
+        "networkError": "Ошибка сети — попробуйте форму контакта"
       },
       "plans": {
         "starter": {
-          "name": "Starter",
-          "priceLabel": "Free",
-          "description": "Motion primitives and demo sections to fork.",
+          "name": "Flash",
+          "priceLabel": "~15 мин–1 день",
+          "description": "Каркас + тема + variants + публичный URL. Без глубокой полировки текстов.",
           "features": {
-            "0": "Framer + GSAP setup",
-            "1": "Lenis scroll",
-            "2": "6 section templates"
+            "0": "brief → scaffold",
+            "1": "preset + theme pack",
+            "2": "QA + Vercel preview"
           }
         },
         "pro": {
-          "name": "Pro",
-          "priceLabel": "$29",
-          "period": "/mo",
-          "description": "Figma MCP workflow and shadcn UI blocks.",
+          "name": "Sprint",
+          "priceLabel": "~3 дня",
+          "description": "Flash + тексты, legal-страницы, форма заявок, домен.",
           "features": {
-            "0": "Motion context import",
-            "1": "Dialog, sheet, tabs",
-            "2": "Scroll pin storytelling",
-            "3": "Priority patterns"
+            "0": "Copy EN (и RU по запросу)",
+            "1": "privacy / terms",
+            "2": "contact + Convex",
+            "3": "custom domain"
           }
         },
         "team": {
-          "name": "Team",
-          "priceLabel": "$99",
-          "period": "/mo",
-          "description": "Multi-page sites with ChatPRD alignment.",
+          "name": "Build",
+          "priceLabel": "~2 недели",
+          "description": "Sprint + Stripe, CMS-lite, analytics, Resend, мультистраницы.",
           "features": {
-            "0": "PRD → implementation",
-            "1": "Custom design tokens",
-            "2": "Team rules"
+            "0": "Stripe checkout",
+            "1": "CMS / i18n по нужде",
+            "2": "analytics + Resend"
           }
         }
       }
     },
     "faq": {
-      "title": "Frequently asked questions",
+      "title": "Частые вопросы",
       "items": {
         "stack": {
-          "q": "Which animation library should I use?",
-          "a": "Framer Motion for UI and React layout; GSAP ScrollTrigger for scroll timelines and pin sections; Lenis for smooth scroll. The starter wires them together."
+          "q": "Это как Framer или Lovable?",
+          "a": "Нет. Вы получаете свой Next.js-код с motion-стеком фабрики. Не аренда редактора и не vibe-app без каталога."
         },
         "figma": {
-          "q": "How does Figma motion import work?",
-          "a": "Paste a Figma URL in Cursor. The agent calls get_design_context for structure and get_motion_context for keyframes, then merges animations by data-node-id into React components."
+          "q": "Можно из Figma?",
+          "a": "Да — в Cursor через Figma MCP. Структура и motion подтягиваются в секции каталога, а не в случайный JSX."
         },
         "stripe": {
-          "q": "How do I enable Stripe checkout?",
-          "a": "Add STRIPE_SECRET_KEY, STRIPE_PRICE_PRO, STRIPE_PRICE_TEAM, and STRIPE_WEBHOOK_SECRET to .env.local. Use stripe listen for local webhooks."
+          "q": "Что входит в Flash?",
+          "a": "Пресет, theme, variants, базовые тексты, QA и live URL. Глубокий копирайт, домен и бэкенд — в Sprint/Build."
         },
         "a11y": {
-          "q": "What about accessibility?",
-          "a": "Components use Base UI primitives. Lenis, GSAP pin, and 3D hero are disabled when prefers-reduced-motion is set."
+          "q": "Анимации не сломают доступность?",
+          "a": "Lenis, pin и 3D отключаются при prefers-reduced-motion. UI на Base UI / shadcn."
         },
         "contact": {
-          "q": "Does the newsletter form save data?",
-          "a": "Yes — emails go to the Convex leads table with a live counter on the contact section. View recent signups on /status."
+          "q": "Как оставить заявку?",
+          "a": "Форма ниже (#contact). Email попадает в очередь leads; ответ обычно в течение рабочего дня."
         },
         "convex": {
-          "q": "Where do subscriptions go after checkout?",
-          "a": "Stripe webhook forwards to Convex HTTP ingest. Open /status for a real-time feed."
+          "q": "Где примеры?",
+          "a": "https://site-ref-saas.vercel.app · https://site-ref-agency.vercel.app · https://site-ref-launch.vercel.app · эталон https://web-motion-starter.vercel.app"
         },
         "deploy": {
-          "q": "Can I deploy to Vercel?",
-          "a": "Yes. npm run build produces a static-friendly app. Set env vars in the Vercel dashboard before enabling live checkout."
+          "q": "Кто владеет доменом и репо?",
+          "a": "Вы. Фабрика собирает и выкладывает; доступы Vercel/GitHub передаём при сдаче."
         }
       }
     },
@@ -316,23 +331,23 @@
       }
     },
     "contact": {
-      "title": "Stay in the loop",
-      "description": "Motion patterns and Figma → code tips. Stored in Convex — updates live.",
-      "placeholder": "you@studio.com",
-      "subscribe": "Subscribe",
-      "sending": "Sending…",
-      "success": "You're on the list — thank you!",
-      "exists": "Already subscribed with this email.",
-      "emailUs": "Email us",
+      "title": "Оставить бриф",
+      "description": "Коротко: бренд, ниша, пакет (Flash/Sprint/Build), ссылки на референсы. Ответим с следующим шагом.",
+      "placeholder": "you@company.com",
+      "subscribe": "Отправить",
+      "sending": "Отправляем…",
+      "success": "Заявка принята — скоро напишем.",
+      "exists": "Этот email уже в очереди.",
+      "emailUs": "Или напишите напрямую",
       "emailLabel": "Email",
-      "leadCount": "{count} subscribers",
-      "genericError": "Something went wrong"
+      "leadCount": "{count} заявок в очереди",
+      "genericError": "Что-то пошло не так — попробуйте ещё раз"
     },
     "cta": {
-      "title": "Ready for your Figma file",
-      "description": "Paste a design URL in chat — motion, layout, and components land in this stack with matching easing and timing.",
-      "primary": "Open in Cursor",
-      "secondary": "Figma MCP docs"
+      "title": "Готовы к живому URL?",
+      "description": "Выберите пакет, оставьте email — соберём сайт из каталога секций с motion, который уже обкатан на live-референсах.",
+      "primary": "К форме брифа",
+      "secondary": "Эталон завода"
     }
   },
   "LocaleSwitcher": {

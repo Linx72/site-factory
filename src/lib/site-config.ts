@@ -5,8 +5,8 @@ import type { AnalyticsProvider } from "@/lib/analytics";
 import { getAnalyticsProvider } from "@/lib/analytics";
 
 export const siteConfig = {
-  name: "Launchpad",
-  description: "Ship a product launch page fast — editorial hero, features, pricing compare, FAQ, contact, and legal pages.",
+  name: "Site Factory",
+  description: "Живой анимированный сайт по запросу — brief → preset → Vercel URL. Код ваш, motion из каталога.",
   url: process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3000",
   links: {
     github: "",
