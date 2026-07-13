@@ -2,13 +2,13 @@ import { getLocale, getTranslations } from "next-intl/server";
 
 import { PageShell } from "@/components/layout/page-shell";
 import { NotFoundView } from "@/components/pages/not-found-view";
-import { buildShellCopy } from "@/lib/i18n/build-home-copy";
-import { siteFeatures } from "@/lib/site-config";
+import { getDefaultHomeSectionCopy, buildShellCopy } from "@/lib/i18n/build-home-copy";
+import { getSingleLocale, siteFeatures } from "@/lib/site-config";
 
 /** Root 404 fallback — localized when i18n is on. */
 export default async function NotFound() {
   const t = await getTranslations("NotFound");
-  const locale = siteFeatures.i18n ? await getLocale() : undefined;
+  const locale = siteFeatures.i18n ? await getLocale() : getSingleLocale();
 
   const copy = {
     code: t("code"),
@@ -30,9 +30,11 @@ export default async function NotFound() {
     );
   }
 
+  const shell = getDefaultHomeSectionCopy();
+
   return (
-    <PageShell>
-      <NotFoundView copy={copy} />
+    <PageShell copy={shell} locale={locale}>
+      <NotFoundView locale={locale} copy={copy} />
     </PageShell>
   );
 }

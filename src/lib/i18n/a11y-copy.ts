@@ -12,3 +12,11 @@ export const defaultA11yCopy: A11yCopy = {
   themeLight: "Switch to light mode",
   themeDark: "Switch to dark mode",
 };
+
+/** Russian a11y labels for single-locale storefronts (`NEXT_PUBLIC_DEFAULT_LOCALE=ru`). */
+export const defaultRuA11yCopy: A11yCopy = {
+  skipToContent: "Перейти к содержимому",
+  themeToggle: "Переключить тему",
+  themeLight: "Светлая тема",
+  themeDark: "Тёмная тема",
+};

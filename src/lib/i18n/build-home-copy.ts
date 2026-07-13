@@ -1,6 +1,7 @@
 import { getNavLinks } from "@/lib/site-content";
-import { defaultA11yCopy, type A11yCopy } from "@/lib/i18n/a11y-copy";
+import { defaultA11yCopy, defaultRuA11yCopy, type A11yCopy } from "@/lib/i18n/a11y-copy";
 import { localizedPath } from "@/lib/i18n/paths";
+import { getSingleLocale } from "@/lib/site-config";
 import {
   defaultBentoCopy,
   defaultContactCopy,
@@ -266,10 +267,13 @@ export { buildStatusPageCopy, getDefaultStatusPageCopy } from "@/lib/i18n/build-
 
 /** Defaults when i18n is off — single-locale `/` route. */
 export function getDefaultHomeSectionCopy(): HomeSectionCopy {
+  const locale = getSingleLocale();
+  const isRu = locale === "ru";
+
   return {
     header: {
-      cta: siteContent.headerCta ?? "Get started",
-      menu: "Menu",
+      cta: siteContent.headerCta ?? (isRu ? "Оставить бриф" : "Get started"),
+      menu: isRu ? "Меню" : "Menu",
     },
     nav: { links: buildDefaultNavLinks() },
     footer: defaultFooterCopy,
@@ -289,6 +293,6 @@ export function getDefaultHomeSectionCopy(): HomeSectionCopy {
     },
     contact: defaultContactCopy,
     cta: defaultCtaCopy,
-    a11y: defaultA11yCopy,
+    a11y: isRu ? defaultRuA11yCopy : defaultA11yCopy,
   };
 }

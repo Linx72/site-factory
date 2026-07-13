@@ -66,6 +66,7 @@ echo ""
 
 check_patterns "home RU" "$BASE" \
   'lang="ru"' \
+  "Переключить тему" \
   "Как устроено" \
   "Пакеты" \
   "Flash" \
