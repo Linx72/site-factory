@@ -10,6 +10,7 @@ What the Site Factory sells, how fast it ships, and what the client gets.
 | **saas** | https://site-ref-saas.vercel.app | PLG / pricing |
 | **agency** | https://site-ref-agency.vercel.app | Studio / scroll story |
 | **launch** | https://site-ref-launch.vercel.app | Product drop (editorial + compare) |
+| **Storefront** | https://site-factory-hq.vercel.app | Sell Flash / Sprint / Build |
 | demo-studio | https://demo-studio-orpin.vercel.app | Pitch showcase |
 
 ## Offers (time boxes)

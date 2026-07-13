@@ -10,6 +10,7 @@ All production URLs on Vercel (`fly-type` team).
 | **Flowbase** | SaaS preset reference | https://site-ref-saas.vercel.app | [site-ref-saas](https://github.com/Linx72/site-ref-saas) |
 | **Northline Studio** | Agency preset reference | https://site-ref-agency.vercel.app | [site-ref-agency](https://github.com/Linx72/site-ref-agency) |
 | **Launchpad** | Launch preset reference | https://site-ref-launch.vercel.app | [site-ref-launch](https://github.com/Linx72/site-ref-launch) |
+| **Site Factory** | Storefront (Flash/Sprint/Build) | https://site-factory-hq.vercel.app | [site-factory](https://github.com/Linx72/site-factory) |
 | **Flowstack** | Client delivery example | https://client-flowstack.vercel.app | [client-flowstack](https://github.com/Linx72/client-flowstack) |
 
 ## OG previews

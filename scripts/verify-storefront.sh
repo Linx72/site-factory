@@ -15,7 +15,9 @@ ok() { printf '\033[1;32m✓\033[0m %s\n' "$*"; }
 fail() { printf '\033[1;31m✗\033[0m %s\n' "$*"; FAIL=1; }
 
 fetch_to() {
-  curl -sL --compressed --connect-timeout 15 --max-time "$TIMEOUT" -o "$2" "$1" 2>/dev/null || true
+  curl -sL --compressed --connect-timeout 20 --max-time "$TIMEOUT" \
+    --retry 2 --retry-delay 3 --retry-all-errors \
+    -o "$2" "$1" 2>/dev/null || true
 }
 
 check_patterns() {
