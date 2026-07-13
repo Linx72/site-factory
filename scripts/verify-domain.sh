@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
 #
-# verify-domain.sh — HTTP + i18n smoke for a production URL (custom or Vercel).
+# verify-domain.sh — HTTP + storefront smoke (no i18n).
 #
 # Usage:
-#   npm run domain:verify -- https://example.com
-#   VERIFY_PROD_URL=https://example.com npm run domain:verify
+#   npm run domain:verify -- https://site-factory-hq.vercel.app
 #
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-URL="${1:-${VERIFY_PROD_URL:-https://web-motion-starter.vercel.app}}"
+URL="${1:-${VERIFY_PROD_URL:-https://site-factory-hq.vercel.app}}"
 URL="${URL%/}"
 
 ok() { printf '\033[1;32m✓\033[0m %s\n' "$*"; }
@@ -37,16 +36,18 @@ else
   warn "OpenGraph image HTTP $og_code"
 fi
 
-if [[ -n "${SKIP_I18N_VERIFY:-}" ]]; then
-  warn "SKIP_I18N_VERIFY set — skipping prod i18n"
-  exit 0
+sitemap_code=$(curl -sS -o /dev/null -w "%{http_code}" --connect-timeout 15 --max-time 45 "$URL/sitemap.xml" 2>/dev/null || true)
+if [[ "${sitemap_code:-000}" =~ ^[23] ]]; then
+  ok "Sitemap HTTP $sitemap_code"
+else
+  warn "Sitemap HTTP ${sitemap_code:-timeout}"
 fi
 
 echo ""
-echo "→ i18n prod smoke"
-if VERIFY_PROD_URL="$URL" npm run verify:prod; then
-  ok "i18n smoke passed for $URL"
+echo "→ Storefront content smoke"
+if VERIFY_STOREFRONT_URL="$URL" npm run verify:storefront; then
+  ok "Storefront smoke passed for $URL"
 else
-  warn "i18n smoke failed — CDN/DNS may still be propagating"
+  warn "Storefront smoke failed — CDN may still be propagating"
   exit 1
 fi

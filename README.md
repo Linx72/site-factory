@@ -1,28 +1,61 @@
-# Launchpad
+# Site Factory — storefront
 
-Reference site preset: `launch` (from `web-motion-starter/references/launch.json`).
+Живая витрина пакетов **Flash / Sprint / Build**. Пресет `launch`, тема `editorial-ink`, RU-копирайт без i18n.
 
-Ship a product launch page fast — editorial hero, features, pricing compare, FAQ, contact, and legal pages.
+| | |
+|---|---|
+| **Live** | https://site-factory-hq.vercel.app |
+| **Repo** | https://github.com/Linx72/site-factory |
+| **Brief** | `content/brief.json` (from template `docs/examples/brief-site-factory.json`) |
 
 ## Develop
 
 ```bash
-npm run quick-start   # install + optional Playwright
-npm run dev
+npm install
+npm run dev                    # http://localhost:3000
+npm run qa
+npm run verify:storefront      # prod smoke (после деплоя)
 ```
 
-## Sections
+## Ship
 
-`hero,features,pricing,faq,contact,cta`
+```bash
+npm run deploy:prebuilt        # Vercel prod (fly-type/site-factory)
+npm run domain:verify          # HTTP + storefront smoke
+```
 
-## Theme / variants
+Первый раз: `vercel link --yes` (scope `fly-type`, project `site-factory`).
 
-- Theme: `editorial-ink`
-- Variants: `{"hero":"editorial","features":"bento-lite","pricing":"compare"}`
+## Leads (без Convex)
+
+1. **Сейчас:** форма `#contact` → mailto `brief@sitefactory.dev`
+2. **Resend (рекомендуется):** Vercel Production env:
+   - `RESEND_API_KEY`, `LEADS_NOTIFY_EMAIL`, `RESEND_FROM_EMAIL`
+   - `NEXT_PUBLIC_LEAD_API=true` → `POST /api/lead`
+3. **Convex (Sprint/Build):** `npx convex login` → `npm run convex:init -- --prod` → `npm run convex:vercel -- <URL>`
+
+См. [docs/features/RESEND.md](docs/features/RESEND.md).
+
+## Custom domain
+
+```bash
+# Vercel Dashboard → Domains → DNS valid
+npm run domain:custom -- your-domain.com
+npm run domain:verify -- https://your-domain.com
+```
+
+## Пакеты (pricing)
+
+| ID | Имя | Срок |
+|----|-----|------|
+| starter | Flash | ~15 мин–1 день |
+| pro | Sprint | ~3 дня |
+| team | Build | ~2 недели |
+
+Кнопки без Stripe ведут на `#contact`.
 
 ## Docs
 
-- `docs/REFERENCE-SITES.md` — preset catalog
-- `docs/features/THEME-PACKS.md` — theme packs
-- `docs/features/SECTION-VARIANTS.md` — section variants
-- `docs/PLAYBOOK-NEW-SITE.md` — full workflow
+- [docs/SALES-KIT.md](docs/SALES-KIT.md) — продажа (в шаблоне)
+- [docs/CUSTOM-DOMAIN.md](docs/CUSTOM-DOMAIN.md)
+- [docs/HANDOFF.md](docs/HANDOFF.md)

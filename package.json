@@ -37,6 +37,7 @@
     "factory:health": "bash scripts/factory-health.sh",
     "verify:live": "bash scripts/verify-live.sh",
     "verify:storefront": "bash scripts/verify-storefront.sh",
+    "verify:lead-api": "bash scripts/verify-lead-api.sh",
     "verify:sitemap": "node scripts/verify-sitemap-urls.mjs",
     "verify:messages": "node scripts/verify-messages-parity.mjs",
     "verify:brief": "node scripts/verify-brief.mjs",
@@ -56,6 +57,7 @@
     "vercel:git": "bash scripts/connect-vercel-git.sh",
     "deploy": "bash scripts/deploy-vercel.sh",
     "deploy:prebuilt": "bash scripts/deploy-prebuilt.sh",
+    "ship:storefront": "npm run qa && npm run verify:storefront && npm run deploy:prebuilt && npm run verify:lead-api",
     "ship:when-ready": "bash scripts/ship-when-ready.sh"
   },
   "dependencies": {
