@@ -18,6 +18,7 @@ import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { TimelineSection } from "@/components/sections/timeline-section";
 import { UiShowcase } from "@/components/sections/ui-showcase";
 import { JsonLd } from "@/components/seo/json-ld";
+import { buildStorefrontOrganizationJsonLd } from "@/lib/seo/storefront-json-ld";
 import { getDefaultHomeSectionCopy } from "@/lib/i18n/build-home-copy";
 import type { HomeSectionCopy } from "@/lib/i18n/section-copy";
 import { localizedHomeHref } from "@/lib/i18n/paths";
@@ -153,6 +154,7 @@ export function HomePage({
   return (
     <>
       <JsonLd data={homeJsonLd} />
+      <JsonLd data={buildStorefrontOrganizationJsonLd(jsonLdUrl ?? siteConfig.url)} />
       <SiteHeader
         ctaLabel={copy.header?.cta}
         menuLabel={copy.header?.menu}

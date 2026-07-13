@@ -3,6 +3,7 @@
  * Keeps client sections free of next-intl hooks where props suffice.
  */
 import type { A11yCopy } from "@/lib/i18n/a11y-copy";
+import { presetReferenceLinks } from "@/lib/reference-sites";
 
 export type FaqItemCopy = {
   id: string;
@@ -362,11 +363,7 @@ export const defaultFeatureItems: FeatureItemCopy[] = [
     id: "production",
     title: "Живые примеры",
     body: "SaaS, Agency и Launch — смотрите до заказа.",
-    links: [
-      { label: "SaaS", href: "https://site-ref-saas.vercel.app" },
-      { label: "Agency", href: "https://site-ref-agency.vercel.app" },
-      { label: "Launch", href: "https://site-ref-launch.vercel.app" },
-    ],
+    links: presetReferenceLinks(),
   },
 ];
 

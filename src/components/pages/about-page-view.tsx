@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/layout/page-shell";
+import { ReferenceSitesGrid } from "@/components/marketing/reference-sites-grid";
 import { CtaSection } from "@/components/sections/cta-section";
 import { TeamSection } from "@/components/sections/team-section";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -41,6 +42,7 @@ export function AboutPageView({
             {about.title}
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">{about.description}</p>
+          <ReferenceSitesGrid />
         </FadeIn>
       </section>
       {team ? <TeamSection copy={team} /> : null}

@@ -12,8 +12,8 @@ import {
   defaultFeaturesCopy,
   type FeaturesSectionCopy,
   type FeatureItemCopy,
-  type FeatureLinkCopy,
 } from "@/lib/i18n/section-copy";
+import { ReferenceLinks } from "@/components/marketing/reference-links";
 import type { FeaturesVariant } from "@/lib/section-variants";
 import { resolveImplementedFeaturesVariant } from "@/lib/section-variants";
 import { cn } from "@/lib/utils";
@@ -24,29 +24,11 @@ type FeaturesSectionProps = {
   variant?: FeaturesVariant;
 };
 
-function FeatureLinks({ links }: { links: FeatureLinkCopy[] }) {
-  return (
-    <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
-      {links.map((link) => (
-        <a
-          key={link.href}
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-medium text-primary underline-offset-4 hover:underline"
-        >
-          {link.label}
-        </a>
-      ))}
-    </div>
-  );
-}
-
 function FeatureBody({ body, links }: Pick<FeatureItemCopy, "body" | "links">) {
   return (
     <>
       <p>{body}</p>
-      {links?.length ? <FeatureLinks links={links} /> : null}
+      {links?.length ? <ReferenceLinks links={links} className="mt-3 flex flex-wrap gap-x-3 gap-y-1" /> : null}
     </>
   );
 }

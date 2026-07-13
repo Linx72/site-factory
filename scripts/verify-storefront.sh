@@ -79,7 +79,8 @@ check_patterns "home RU" "$BASE" \
 
 check_patterns "about RU" "$BASE/about" \
   "О фабрике" \
-  "Каталог секций"
+  "Каталог секций" \
+  "site-ref-saas.vercel.app"
 
 check_patterns "privacy RU" "$BASE/privacy" \
   "Политика конфиденциальности"
