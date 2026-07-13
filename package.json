@@ -57,7 +57,8 @@
     "vercel:git": "bash scripts/connect-vercel-git.sh",
     "deploy": "bash scripts/deploy-vercel.sh",
     "deploy:prebuilt": "bash scripts/deploy-prebuilt.sh",
-    "ship:storefront": "npm run qa && npm run verify:storefront && npm run deploy:prebuilt && npm run verify:lead-api",
+    "ship:storefront": "npm run qa && npm run deploy:prebuilt && npm run verify:storefront && npm run verify:lead-api",
+    "resend:vercel": "bash scripts/setup-resend-vercel.sh",
     "ship:when-ready": "bash scripts/ship-when-ready.sh"
   },
   "dependencies": {

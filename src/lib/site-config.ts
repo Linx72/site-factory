@@ -3,6 +3,7 @@
  */
 import type { AnalyticsProvider } from "@/lib/analytics";
 import { getAnalyticsProvider } from "@/lib/analytics";
+import { routing, type AppLocale } from "@/i18n/routing";
 
 function resolveSiteUrl(): string {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
@@ -56,3 +57,15 @@ export const siteFeatures = {
   /** POST /api/lead when NEXT_PUBLIC_LEAD_API=true and Resend env on server. */
   leadApi: process.env.NEXT_PUBLIC_LEAD_API === "true",
 } as const;
+
+/** Locale for `/` when i18n is off (`NEXT_PUBLIC_DEFAULT_LOCALE`) or routing default when on. */
+export function getSingleLocale(): AppLocale {
+  if (siteFeatures.i18n) {
+    return routing.defaultLocale;
+  }
+  const raw = process.env.NEXT_PUBLIC_DEFAULT_LOCALE?.trim();
+  if (raw && routing.locales.includes(raw as AppLocale)) {
+    return raw as AppLocale;
+  }
+  return routing.defaultLocale;
+}

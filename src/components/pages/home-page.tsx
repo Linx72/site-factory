@@ -22,7 +22,7 @@ import { getDefaultHomeSectionCopy } from "@/lib/i18n/build-home-copy";
 import type { HomeSectionCopy } from "@/lib/i18n/section-copy";
 import { localizedHomeHref } from "@/lib/i18n/paths";
 import type { HomeSectionId } from "@/lib/site-content";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, getSingleLocale } from "@/lib/site-config";
 import {
   getSectionVariants,
   type SectionVariantsConfig,
@@ -129,7 +129,7 @@ function renderSection(
 /** Composed marketing landing — shared by `/` and `/[locale]`. */
 export function HomePage({
   hero,
-  locale = "en",
+  locale = getSingleLocale(),
   sections,
   variants: variantsProp,
   copy = getDefaultHomeSectionCopy(),

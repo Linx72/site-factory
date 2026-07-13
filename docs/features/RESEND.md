@@ -42,6 +42,14 @@ NEXT_PUBLIC_LEAD_API=true
 
 Redeploy. Form tries API first; on 503 falls back to mailto.
 
+**One-liner (storefront):**
+
+```bash
+RESEND_API_KEY=re_... LEADS_NOTIFY_EMAIL=you@domain.com npm run resend:vercel
+npm run deploy:prebuilt
+npm run verify:lead-api
+```
+
 ## Checklist
 
 1. Create account at https://resend.com → API key

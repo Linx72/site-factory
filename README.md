@@ -32,6 +32,7 @@ npm run domain:verify          # HTTP + storefront smoke
 2. **Resend (рекомендуется):** Vercel Production env:
    - `RESEND_API_KEY`, `LEADS_NOTIFY_EMAIL`, `RESEND_FROM_EMAIL`
    - `NEXT_PUBLIC_LEAD_API=true` → `POST /api/lead`
+   - Быстро: `RESEND_API_KEY=re_... LEADS_NOTIFY_EMAIL=you@domain.com npm run resend:vercel && npm run deploy:prebuilt`
 3. **Convex (Sprint/Build):** `npx convex login` → `npm run convex:init -- --prod` → `npm run convex:vercel -- <URL>`
 
 См. [docs/features/RESEND.md](docs/features/RESEND.md).
