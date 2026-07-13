@@ -26,6 +26,8 @@ npm run domain:verify          # HTTP + storefront smoke
 
 Первый раз: `vercel link --yes` (scope `fly-type`, project `site-factory`).
 
+**GitHub Deploy:** если workflow Deploy падает на `vercel pull` — обновите `VERCEL_TOKEN` в [GitHub secrets](https://github.com/Linx72/site-factory/settings/secrets/actions) (токен с [vercel.com/account/tokens](https://vercel.com/account/tokens)).
+
 ## Leads (без Convex)
 
 1. **Сейчас:** форма `#contact` → mailto `brief@sitefactory.dev`
