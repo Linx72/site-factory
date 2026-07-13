@@ -39,20 +39,3 @@ jobs:
           NEXT_PUBLIC_I18N: "false"
           NEXT_PUBLIC_DEFAULT_LOCALE: "ru"
           NEXT_PUBLIC_SITE_URL: "https://site-factory-hq.vercel.app"
-
-  prod-smoke:
-    runs-on: ubuntu-latest
-    needs: qa
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    timeout-minutes: 10
-
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: npm
-      - run: npm ci
-
-      - name: Storefront prod smoke
-        run: npm run verify:storefront

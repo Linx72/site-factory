@@ -39,6 +39,24 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
+      - name: Pin storefront NEXT_PUBLIC_* for prebuilt build
+        run: |
+          ENV_FILE=".vercel/.env.production.local"
+          touch "$ENV_FILE"
+          for kv in \
+            "NEXT_PUBLIC_I18N=false" \
+            "NEXT_PUBLIC_DEFAULT_LOCALE=ru" \
+            "NEXT_PUBLIC_SITE_URL=https://site-factory-hq.vercel.app" \
+            "NEXT_PUBLIC_ANALYTICS=vercel" \
+            "NEXT_PUBLIC_CONTACT_EMAIL=brief@sitefactory.dev"; do
+            key="${kv%%=*}"
+            if grep -q "^${key}=" "$ENV_FILE"; then
+              sed -i "s|^${key}=.*|${kv}|" "$ENV_FILE"
+            else
+              echo "$kv" >>"$ENV_FILE"
+            fi
+          done
+
       - name: Build with Vercel
         run: npx vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
         env:
@@ -53,3 +71,9 @@ jobs:
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Storefront prod smoke
+        run: npm run verify:storefront
+        env:
+          VERIFY_PROD_RETRIES: "8"
+          VERIFY_PROD_RETRY_DELAY: "8"
