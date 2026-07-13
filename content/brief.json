@@ -20,7 +20,7 @@
     "pricing": "compare"
   },
   "locales": [
-    "en"
+    "ru"
   ],
   "features": {
     "stripe": false,

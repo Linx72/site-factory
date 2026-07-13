@@ -441,7 +441,7 @@ export const defaultFaqItems: FaqItemCopy[] = [
 export const defaultContactCopy: ContactSectionCopy = {
   title: "Оставить бриф",
   description: "Коротко: бренд, ниша, пакет (Flash/Sprint/Build), ссылки на референсы. Ответим со следующим шагом.",
-  placeholder: "you@company.com",
+  placeholder: "email@company.ru",
   briefPlaceholder: "Бренд, ниша, пакет (Flash/Sprint/Build), ссылки на референсы…",
   subscribe: "Отправить",
   sending: "Отправляем…",

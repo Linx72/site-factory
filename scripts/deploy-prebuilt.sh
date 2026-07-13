@@ -28,9 +28,10 @@ vercel_cmd pull --yes --environment=production >/dev/null 2>&1 || true
 # NEXT_PUBLIC_* are inlined at build time — must be set before vercel build.
 # Site Factory storefront: RU copy via section-copy defaults (i18n off).
 NEXT_PUBLIC_I18N=false
+NEXT_PUBLIC_DEFAULT_LOCALE=ru
 NEXT_PUBLIC_SITE_URL=https://site-factory-hq.vercel.app
 NEXT_PUBLIC_ANALYTICS=vercel
-export NEXT_PUBLIC_I18N NEXT_PUBLIC_SITE_URL NEXT_PUBLIC_ANALYTICS
+export NEXT_PUBLIC_I18N NEXT_PUBLIC_DEFAULT_LOCALE NEXT_PUBLIC_SITE_URL NEXT_PUBLIC_ANALYTICS
 
 # Rewrite pulled env so `vercel build` does not re-inject template defaults.
 ENV_FILE=".vercel/.env.production.local"
@@ -44,6 +45,11 @@ if [[ -f "$ENV_FILE" ]]; then
     sed -i '' "s|^NEXT_PUBLIC_SITE_URL=.*|NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL}|" "$ENV_FILE"
   else
     echo "NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL}" >>"$ENV_FILE"
+  fi
+  if grep -q '^NEXT_PUBLIC_DEFAULT_LOCALE=' "$ENV_FILE"; then
+    sed -i '' "s|^NEXT_PUBLIC_DEFAULT_LOCALE=.*|NEXT_PUBLIC_DEFAULT_LOCALE=${NEXT_PUBLIC_DEFAULT_LOCALE}|" "$ENV_FILE"
+  else
+    echo "NEXT_PUBLIC_DEFAULT_LOCALE=${NEXT_PUBLIC_DEFAULT_LOCALE}" >>"$ENV_FILE"
   fi
   if grep -q '^NEXT_PUBLIC_ANALYTICS=' "$ENV_FILE"; then
     sed -i '' "s|^NEXT_PUBLIC_ANALYTICS=.*|NEXT_PUBLIC_ANALYTICS=${NEXT_PUBLIC_ANALYTICS}|" "$ENV_FILE"

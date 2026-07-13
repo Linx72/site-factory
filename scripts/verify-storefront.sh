@@ -65,6 +65,7 @@ echo "═══ Storefront smoke ($BASE) ═══"
 echo ""
 
 check_patterns "home RU" "$BASE" \
+  'lang="ru"' \
   "Как устроено" \
   "Пакеты" \
   "Flash" \

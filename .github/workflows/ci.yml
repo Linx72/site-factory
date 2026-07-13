@@ -28,6 +28,7 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_I18N: "false"
+          NEXT_PUBLIC_DEFAULT_LOCALE: "ru"
           NEXT_PUBLIC_SITE_URL: "https://site-factory-hq.vercel.app"
           NEXT_PUBLIC_CONTACT_EMAIL: "brief@sitefactory.dev"
           NEXT_PUBLIC_ANALYTICS: "vercel"
@@ -36,6 +37,7 @@ jobs:
         run: npm run verify:sitemap
         env:
           NEXT_PUBLIC_I18N: "false"
+          NEXT_PUBLIC_DEFAULT_LOCALE: "ru"
           NEXT_PUBLIC_SITE_URL: "https://site-factory-hq.vercel.app"
 
   prod-smoke:
