@@ -28,7 +28,7 @@ vercel_cmd pull --yes --environment=production >/dev/null 2>&1 || true
 # NEXT_PUBLIC_* are inlined at build time — must be set before vercel build.
 # Site Factory storefront: RU copy via section-copy defaults (i18n off).
 NEXT_PUBLIC_I18N=false
-NEXT_PUBLIC_SITE_URL=https://site-factory.vercel.app
+NEXT_PUBLIC_SITE_URL=https://site-factory-hq.vercel.app
 export NEXT_PUBLIC_I18N NEXT_PUBLIC_SITE_URL
 
 # Rewrite pulled env so `vercel build` does not re-inject template defaults.

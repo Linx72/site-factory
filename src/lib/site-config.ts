@@ -9,7 +9,7 @@ export const siteConfig = {
   description: "Живой анимированный сайт по запросу — brief → preset → Vercel URL. Код ваш, motion из каталога.",
   url: process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3000",
   links: {
-    github: "",
+    github: "https://github.com/Linx72/site-factory",
   },
 } as const;
 
