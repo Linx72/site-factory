@@ -53,4 +53,6 @@ export const siteFeatures = {
     process.env.NEXT_PUBLIC_CMS === "true" &&
     Boolean(process.env.NEXT_PUBLIC_CONVEX_URL),
   analytics: getAnalyticsProvider() as AnalyticsProvider,
+  /** POST /api/lead when NEXT_PUBLIC_LEAD_API=true and Resend env on server. */
+  leadApi: process.env.NEXT_PUBLIC_LEAD_API === "true",
 } as const;

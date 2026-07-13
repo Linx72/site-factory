@@ -33,20 +33,55 @@ function buildMailtoHref(
   return `mailto:${siteConfig.contactEmail}?${params.toString()}`;
 }
 
-/** Email + brief fields — opens mail client when Convex is not configured. */
+/** Email + brief — Resend API, mailto, or Convex (when configured). */
 function ContactFormStatic({ copy }: { copy: ContactSectionCopy }) {
   const [email, setEmail] = useState("");
   const [brief, setBrief] = useState("");
-  const [status, setStatus] = useState<"idle" | "ok">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">(
+    "idle",
+  );
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const briefPlaceholder =
     copy.briefPlaceholder ?? "Project, package, reference links…";
+  const useLeadApi = siteFeatures.leadApi;
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setErrorMessage(null);
+
+    if (useLeadApi) {
+      setStatus("loading");
+      try {
+        const response = await fetch("/api/lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, brief }),
+        });
+        if (response.ok) {
+          setStatus("ok");
+          setEmail("");
+          setBrief("");
+          return;
+        }
+        if (response.status === 503) {
+          setStatus("idle");
+        } else {
+          const data: { error?: string } = await response.json();
+          setStatus("error");
+          setErrorMessage(data.error ?? copy.genericError);
+          return;
+        }
+      } catch {
+        setStatus("idle");
+      }
+    }
+
     const subject = `${siteConfig.name} — brief`;
     window.location.href = buildMailtoHref(email, brief, subject);
     setStatus("ok");
   }
+
+  const successText = useLeadApi ? (copy.successApi ?? copy.success) : copy.success;
 
   return (
     <section id="contact" className="border-t border-border px-6 py-24 md:px-16">
@@ -57,7 +92,7 @@ function ContactFormStatic({ copy }: { copy: ContactSectionCopy }) {
           className="text-3xl font-semibold tracking-tight md:text-4xl"
         />
         <p className="mt-4 text-muted-foreground">{copy.description}</p>
-        {copy.mailtoHint ? (
+        {copy.mailtoHint && !useLeadApi ? (
           <p className="mt-2 text-xs text-muted-foreground">{copy.mailtoHint}</p>
         ) : null}
 
@@ -88,8 +123,12 @@ function ContactFormStatic({ copy }: { copy: ContactSectionCopy }) {
               rows={4}
               className="w-full resize-y rounded-2xl border border-input bg-background px-4 py-3 text-sm outline-none ring-ring/50 transition-shadow focus-visible:ring-2"
             />
-            <Button type="submit" className="h-11 rounded-full px-6">
-              {copy.subscribe}
+            <Button
+              type="submit"
+              className="h-11 rounded-full px-6"
+              disabled={status === "loading"}
+            >
+              {status === "loading" ? copy.sending : copy.subscribe}
             </Button>
           </form>
 
@@ -102,7 +141,18 @@ function ContactFormStatic({ copy }: { copy: ContactSectionCopy }) {
                 exit={{ opacity: 0 }}
                 className="mt-4 text-center text-sm text-primary"
               >
-                {copy.success}
+                {successText}
+              </motion.p>
+            ) : null}
+            {status === "error" && errorMessage ? (
+              <motion.p
+                key="error"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                className="mt-4 text-center text-sm text-destructive"
+              >
+                {errorMessage}
               </motion.p>
             ) : null}
           </AnimatePresence>

@@ -28,6 +28,20 @@ Also need:
 - `NEXT_PUBLIC_CONVEX_URL` on the site
 - `siteFeatures.contactForm` true (preset / site-config)
 
+## Next.js lead API (no Convex)
+
+Storefronts can notify via `POST /api/lead` when Resend is on **Vercel** (server env):
+
+```bash
+# Vercel → Production env (not Convex)
+RESEND_API_KEY=re_...
+LEADS_NOTIFY_EMAIL=you@yourdomain.com
+RESEND_FROM_EMAIL="Site Factory <onboarding@resend.dev>"
+NEXT_PUBLIC_LEAD_API=true
+```
+
+Redeploy. Form tries API first; on 503 falls back to mailto.
+
 ## Checklist
 
 1. Create account at https://resend.com → API key

@@ -29,6 +29,8 @@ export type ContactSectionCopy = {
   briefPlaceholder?: string;
   /** Shown after mailto handoff (static form). */
   mailtoHint?: string;
+  /** Success when /api/lead accepts the submission. */
+  successApi?: string;
 };
 
 export type CtaSectionCopy = {
@@ -444,6 +446,7 @@ export const defaultContactCopy: ContactSectionCopy = {
   subscribe: "Отправить",
   sending: "Отправляем…",
   success: "Откроется почта — отправьте письмо, мы ответим в рабочий день.",
+  successApi: "Заявка принята — ответим в рабочий день.",
   exists: "Этот email уже в очереди.",
   emailUs: "Или напишите напрямую",
   emailLabel: "Email",
