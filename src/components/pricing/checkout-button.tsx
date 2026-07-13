@@ -8,7 +8,7 @@ import {
   type PricingCheckoutCopy,
 } from "@/lib/i18n/section-copy";
 import { Button } from "@/components/ui/button";
-import { siteFeatures } from "@/lib/site-config";
+import { siteFeatures, getSingleLocale } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 type CheckoutButtonProps = {
@@ -31,7 +31,7 @@ export function CheckoutButton({
   highlighted = false,
   className,
   checkoutCopy = defaultPricingCopy.checkout,
-  locale = "en",
+  locale = getSingleLocale(),
 }: CheckoutButtonProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

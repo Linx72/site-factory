@@ -14,7 +14,7 @@
     "features": "bento-lite",
     "pricing": "compare"
   },
-  "locales": ["en"],
+  "locales": ["ru"],
   "features": {
     "stripe": false,
     "convex": true,

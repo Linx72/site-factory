@@ -20,6 +20,7 @@ import { type PlanId } from "@/lib/pricing/plans";
 import { PRICING_PLAN_IDS } from "@/lib/i18n/section-copy";
 import type { PricingVariant } from "@/lib/section-variants";
 import { resolveImplementedPricingVariant } from "@/lib/section-variants";
+import { getSingleLocale } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 type PricingSectionProps = {
@@ -247,7 +248,7 @@ function PricingCompare({
 /** Pricing section — `cards` or `compare` from site.json variants. */
 export function PricingSection({
   copy = defaultPricingCopy,
-  locale = "en",
+  locale = getSingleLocale(),
   variant = "cards",
 }: PricingSectionProps) {
   const layout = resolveImplementedPricingVariant(variant);

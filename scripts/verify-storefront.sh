@@ -84,6 +84,10 @@ check_patterns "contact form" "$BASE" \
   "contact-brief-static" \
   "contact-email-static"
 
+check_patterns "status hint" "$BASE/status" \
+  "Convex не подключён" \
+  "Форма брифа на главной"
+
 echo ""
 if [[ "$FAIL" -eq 0 ]]; then
   ok "Storefront smoke passed"

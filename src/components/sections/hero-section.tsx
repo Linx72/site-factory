@@ -12,7 +12,7 @@ import { useCmsString } from "@/lib/cms/use-cms-string";
 import { fadeUp } from "@/lib/motion/variants";
 import type { HeroVariant } from "@/lib/section-variants";
 import { Button } from "@/components/ui/button";
-import { siteConfig, siteFeatures } from "@/lib/site-config";
+import { siteConfig, siteFeatures, getSingleLocale } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 export type HeroSectionProps = {
@@ -205,7 +205,7 @@ function HeroSectionView({ variant, stats, ...copy }: HeroViewProps) {
 
 /** CMS branch — only mounted when siteFeatures.cms is true (requires ConvexProvider). */
 function HeroSectionWithCms(props: HeroSectionProps) {
-  const locale = props.locale ?? "en";
+  const locale = props.locale ?? getSingleLocale();
   const fallback = resolveCopy(props);
   const stats = props.stats ?? defaultStats;
   const variant = props.variant ?? "default";

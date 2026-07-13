@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cmsKeys } from "@/lib/cms/keys";
 import { useCmsString } from "@/lib/cms/use-cms-string";
 import { defaultCtaCopy, type CtaSectionCopy } from "@/lib/i18n/section-copy";
-import { siteFeatures } from "@/lib/site-config";
+import { siteFeatures, getSingleLocale } from "@/lib/site-config";
 
 type CtaViewProps = {
   title: string;
@@ -91,7 +91,10 @@ function CtaSectionWithCms({
 }
 
 /** Final CTA — LineReveal headline + optional CMS overrides. */
-export function CtaSection({ locale = "en", copy = defaultCtaCopy }: CtaSectionProps) {
+export function CtaSection({
+  locale = getSingleLocale(),
+  copy = defaultCtaCopy,
+}: CtaSectionProps) {
   if (siteFeatures.cms) {
     return <CtaSectionWithCms locale={locale} copy={copy} />;
   }
