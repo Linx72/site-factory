@@ -25,6 +25,10 @@ export type ContactSectionCopy = {
   leadCount: string;
   /** Fallback when Convex mutation throws without message. */
   genericError: string;
+  /** Static mailto fallback — optional brief field placeholder. */
+  briefPlaceholder?: string;
+  /** Shown after mailto handoff (static form). */
+  mailtoHint?: string;
 };
 
 export type CtaSectionCopy = {
@@ -434,14 +438,16 @@ export const defaultContactCopy: ContactSectionCopy = {
   title: "Оставить бриф",
   description: "Коротко: бренд, ниша, пакет (Flash/Sprint/Build), ссылки на референсы. Ответим со следующим шагом.",
   placeholder: "you@company.com",
+  briefPlaceholder: "Бренд, ниша, пакет (Flash/Sprint/Build), ссылки на референсы…",
   subscribe: "Отправить",
   sending: "Отправляем…",
-  success: "Заявка принята — скоро напишем.",
+  success: "Откроется почта — отправьте письмо, мы ответим в рабочий день.",
   exists: "Этот email уже в очереди.",
   emailUs: "Или напишите напрямую",
   emailLabel: "Email",
   leadCount: "{count} заявок в очереди",
   genericError: "Что-то пошло не так — попробуйте ещё раз",
+  mailtoHint: "Без Convex форма открывает ваш почтовый клиент с черновиком брифа.",
 };
 
 export const defaultStatsCopy: StatsSectionCopy = {
@@ -521,37 +527,37 @@ export const defaultTestimonialsCopy: TestimonialsSectionCopy = {
 };
 
 export const defaultTeamCopy: TeamSectionCopy = {
-  title: "People behind the work",
+  title: "Как устроена фабрика",
   subtitle:
-    "Replace names and bios with your team — avatars use initials until photos are wired via next/image.",
+    "Не студия «с нуля» — конвейер: brief.json → scaffold → copy → QA → ship. Motion и секции из каталога с live-референсами.",
   members: [
     {
       id: "alex",
-      name: "Alex Morgan",
-      role: "Creative direction",
-      bio: "Leads visual language, Figma systems, and motion specs for client launches.",
-      initials: "AM",
+      name: "Brief → scaffold",
+      role: "Flash · ~15 мин",
+      bio: "Пресет, theme pack, variants. Публичный Vercel URL без глубокой полировки текстов.",
+      initials: "F",
     },
     {
       id: "jordan",
-      name: "Jordan Lee",
-      role: "Frontend & motion",
-      bio: "Ships Next.js landings — Framer for UI, GSAP for scroll, Lenis for feel.",
-      initials: "JL",
+      name: "Copy + legal",
+      role: "Sprint · ~3 дня",
+      bio: "Тексты EN/RU, privacy/terms, форма заявок, домен, visual smoke.",
+      initials: "S",
     },
     {
       id: "samira",
-      name: "Samira Okonkwo",
-      role: "Design engineering",
-      bio: "Bridges design tokens, shadcn UI, and accessibility reviews before deploy.",
-      initials: "SO",
+      name: "Backend + ops",
+      role: "Build · ~2 недели",
+      bio: "Convex leads, Stripe, CMS-lite, analytics, Resend — когда лендингу нужен бэкенд.",
+      initials: "B",
     },
     {
       id: "chris",
-      name: "Chris Park",
-      role: "Full stack",
-      bio: "Convex, Stripe, and form flows when the landing needs more than static pages.",
-      initials: "CP",
+      name: "Motion catalog",
+      role: "Всегда в базе",
+      bio: "Framer Motion, GSAP ScrollTrigger, Lenis — проверено на site-ref-saas/agency/launch.",
+      initials: "M",
     },
   ],
 };
@@ -675,12 +681,12 @@ export const defaultMotionLabIntro: MotionLabIntroCopy = {
 
 export const defaultFooterCopy: FooterCopy = {
   tagline: "Site Factory · brief → preset → live URL · код ваш",
-  status: "Status",
+  status: "Статус",
   motionLab: "Motion lab",
   statusHref: "/status",
   motionLabHref: "/motion",
-  privacy: "Privacy",
-  terms: "Terms",
+  privacy: "Конфиденциальность",
+  terms: "Условия",
   privacyHref: "/privacy",
   termsHref: "/terms",
   blog: "Blog",

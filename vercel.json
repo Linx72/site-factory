@@ -5,6 +5,7 @@
   "regions": ["iad1"],
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://site-factory-hq.vercel.app",
-    "NEXT_PUBLIC_I18N": "false"
+    "NEXT_PUBLIC_I18N": "false",
+    "NEXT_PUBLIC_CONTACT_EMAIL": "brief@sitefactory.dev"
   }
 }

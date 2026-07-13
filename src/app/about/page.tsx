@@ -6,8 +6,8 @@ import { siteFeatures } from "@/lib/site-config";
 import { notFound, redirect } from "next/navigation";
 
 export const metadata = {
-  title: "About — Web Motion Starter",
-  description: "Team and craft behind the Site Factory stack",
+  title: "О фабрике — Site Factory",
+  description: "Конвейер brief → preset → QA → Vercel. Пакеты Flash, Sprint, Build.",
 };
 
 export default function AboutPage() {
@@ -20,10 +20,10 @@ export default function AboutPage() {
   return (
     <AboutPageView
       about={{
-        eyebrow: "About",
-        title: "People and craft behind the stack",
+        eyebrow: "О фабрике",
+        title: "Каталог секций, не случайный лендинг",
         description:
-          "A short studio page composed from the team and CTA sections — swap copy for your brand.",
+          "Site Factory собирает живые Next.js-сайты из пресетов и motion-каталога. Вы владеете кодом и доменом — мы ускоряем путь от брифа до URL.",
       }}
       shell={{
         header: shell.header,

@@ -8,6 +8,9 @@ export const siteConfig = {
   name: "Site Factory",
   description: "Живой анимированный сайт по запросу — brief → preset → Vercel URL. Код ваш, motion из каталога.",
   url: process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3000",
+  /** Static contact fallback + mailto target when Convex is off. */
+  contactEmail:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "brief@sitefactory.dev",
   links: {
     github: "https://github.com/Linx72/site-factory",
   },

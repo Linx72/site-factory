@@ -11,14 +11,43 @@ import {
   defaultContactCopy,
   type ContactSectionCopy,
 } from "@/lib/i18n/section-copy";
-import { siteFeatures } from "@/lib/site-config";
+import { siteConfig, siteFeatures } from "@/lib/site-config";
 import { api } from "../../../convex/_generated/api";
 
 type ContactSectionProps = {
   copy?: ContactSectionCopy;
 };
 
+function buildMailtoHref(
+  email: string,
+  brief: string,
+  subject: string,
+): string {
+  const body = [`Email: ${email}`, "", brief || "(добавьте детали брифа)"].join(
+    "\n",
+  );
+  const params = new URLSearchParams({
+    subject,
+    body,
+  });
+  return `mailto:${siteConfig.contactEmail}?${params.toString()}`;
+}
+
+/** Email + brief fields — opens mail client when Convex is not configured. */
 function ContactFormStatic({ copy }: { copy: ContactSectionCopy }) {
+  const [email, setEmail] = useState("");
+  const [brief, setBrief] = useState("");
+  const [status, setStatus] = useState<"idle" | "ok">("idle");
+  const briefPlaceholder =
+    copy.briefPlaceholder ?? "Project, package, reference links…";
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const subject = `${siteConfig.name} — brief`;
+    window.location.href = buildMailtoHref(email, brief, subject);
+    setStatus("ok");
+  }
+
   return (
     <section id="contact" className="border-t border-border px-6 py-24 md:px-16">
       <div className="mx-auto max-w-xl text-center">
@@ -28,10 +57,67 @@ function ContactFormStatic({ copy }: { copy: ContactSectionCopy }) {
           className="text-3xl font-semibold tracking-tight md:text-4xl"
         />
         <p className="mt-4 text-muted-foreground">{copy.description}</p>
-        <FadeIn className="mt-8">
-          <Button className="h-11 rounded-full px-6" render={<a href="mailto:hello@example.com" />}>
-            {copy.emailUs}
-          </Button>
+        {copy.mailtoHint ? (
+          <p className="mt-2 text-xs text-muted-foreground">{copy.mailtoHint}</p>
+        ) : null}
+
+        <FadeIn className="mt-8 text-left">
+          <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
+            <label htmlFor="contact-email-static" className="sr-only">
+              {copy.emailLabel}
+            </label>
+            <input
+              id="contact-email-static"
+              type="email"
+              name="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder={copy.placeholder}
+              required
+              className="h-11 w-full rounded-full border border-input bg-background px-4 text-sm outline-none ring-ring/50 transition-shadow focus-visible:ring-2"
+            />
+            <label htmlFor="contact-brief-static" className="sr-only">
+              Brief
+            </label>
+            <textarea
+              id="contact-brief-static"
+              name="brief"
+              value={brief}
+              onChange={(event) => setBrief(event.target.value)}
+              placeholder={briefPlaceholder}
+              rows={4}
+              className="w-full resize-y rounded-2xl border border-input bg-background px-4 py-3 text-sm outline-none ring-ring/50 transition-shadow focus-visible:ring-2"
+            />
+            <Button type="submit" className="h-11 rounded-full px-6">
+              {copy.subscribe}
+            </Button>
+          </form>
+
+          <AnimatePresence mode="wait">
+            {status === "ok" ? (
+              <motion.p
+                key="ok"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                className="mt-4 text-center text-sm text-primary"
+              >
+                {copy.success}
+              </motion.p>
+            ) : null}
+          </AnimatePresence>
+
+          <p className="mt-6 text-center">
+            <Button
+              variant="link"
+              className="text-muted-foreground"
+              render={
+                <a href={`mailto:${siteConfig.contactEmail}`} />
+              }
+            >
+              {copy.emailUs}
+            </Button>
+          </p>
         </FadeIn>
       </div>
     </section>
