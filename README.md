@@ -1,6 +1,6 @@
 # Site Factory — storefront
 
-Живая витрина пакетов **Flash / Sprint / Build**. Пресет `launch`, тема `editorial-ink`, RU-копирайт без i18n.
+Живая витрина пакетов **Flash / Sprint / Build**. Пресет `launch`, тема `editorial-ink`, RU-копирайт без i18n (`NEXT_PUBLIC_DEFAULT_LOCALE=ru`).
 
 | | |
 |---|---|
