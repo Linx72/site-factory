@@ -26,25 +26,14 @@ log "Pull production env"
 vercel_cmd pull --yes --environment=production >/dev/null 2>&1 || true
 
 # NEXT_PUBLIC_* are inlined at build time — must be set before vercel build.
-# Vercel dashboard sometimes stores empty strings; treat empty as unset.
-if [[ -f .vercel/.env.production.local ]]; then
-  set -a
-  # shellcheck disable=SC1091
-  source .vercel/.env.production.local
-  set +a
-fi
-
-if [[ -z "${NEXT_PUBLIC_I18N:-}" ]]; then
-  NEXT_PUBLIC_I18N=true
-fi
-if [[ -z "${NEXT_PUBLIC_SITE_URL:-}" ]]; then
-  NEXT_PUBLIC_SITE_URL=https://web-motion-starter.vercel.app
-fi
+# Site Factory storefront: RU copy via section-copy defaults (i18n off).
+NEXT_PUBLIC_I18N=false
+NEXT_PUBLIC_SITE_URL=https://site-factory.vercel.app
 export NEXT_PUBLIC_I18N NEXT_PUBLIC_SITE_URL
 
-# Rewrite pulled env so `vercel build` does not re-inject empty NEXT_PUBLIC_* values.
-if [[ -f .vercel/.env.production.local ]]; then
-  ENV_FILE=".vercel/.env.production.local"
+# Rewrite pulled env so `vercel build` does not re-inject template defaults.
+ENV_FILE=".vercel/.env.production.local"
+if [[ -f "$ENV_FILE" ]]; then
   if grep -q '^NEXT_PUBLIC_I18N=' "$ENV_FILE"; then
     sed -i '' "s|^NEXT_PUBLIC_I18N=.*|NEXT_PUBLIC_I18N=${NEXT_PUBLIC_I18N}|" "$ENV_FILE"
   else

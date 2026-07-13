@@ -235,6 +235,7 @@
         "starter": {
           "name": "Flash",
           "priceLabel": "~15 мин–1 день",
+          "period": "",
           "description": "Каркас + тема + variants + публичный URL. Без глубокой полировки текстов.",
           "features": {
             "0": "brief → scaffold",
@@ -245,6 +246,7 @@
         "pro": {
           "name": "Sprint",
           "priceLabel": "~3 дня",
+          "period": "",
           "description": "Flash + тексты, legal-страницы, форма заявок, домен.",
           "features": {
             "0": "Copy EN (и RU по запросу)",
@@ -256,6 +258,7 @@
         "team": {
           "name": "Build",
           "priceLabel": "~2 недели",
+          "period": "",
           "description": "Sprint + Stripe, CMS-lite, analytics, Resend, мультистраницы.",
           "features": {
             "0": "Stripe checkout",
