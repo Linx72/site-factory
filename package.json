@@ -38,6 +38,7 @@
     "verify:live": "bash scripts/verify-live.sh",
     "verify:storefront": "bash scripts/verify-storefront.sh",
     "verify:lead-api": "bash scripts/verify-lead-api.sh",
+    "storefront:health": "npm run verify:storefront && npm run verify:lead-api",
     "verify:sitemap": "node scripts/verify-sitemap-urls.mjs",
     "verify:messages": "node scripts/verify-messages-parity.mjs",
     "verify:brief": "node scripts/verify-brief.mjs",

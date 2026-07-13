@@ -21,6 +21,8 @@ export type HeroSectionProps = {
   description?: string;
   primaryCta?: string;
   secondaryCta?: string;
+  /** Secondary button target — defaults to #features; use full URL for external refs. */
+  secondaryHref?: string;
   stats?: readonly { label: string; sub: string }[];
   /** Locale for CMS lookups (defaults to en). */
   locale?: string;
@@ -56,7 +58,10 @@ function resolveCopy(props: HeroSectionProps): HeroCopy {
 function HeroActions({
   primaryCta,
   secondaryCta,
-}: Pick<HeroCopy, "primaryCta" | "secondaryCta">) {
+  secondaryHref = "#features",
+}: Pick<HeroCopy, "primaryCta" | "secondaryCta"> & { secondaryHref?: string }) {
+  const external = /^https?:\/\//i.test(secondaryHref);
+
   return (
     <motion.div variants={fadeUp} className="flex flex-wrap gap-3 pt-2">
       <MagneticButton>
@@ -70,7 +75,14 @@ function HeroActions({
         variant="outline"
         size="lg"
         className="rounded-full px-6"
-        render={<a href="#features" />}
+        render={
+          <a
+            href={secondaryHref}
+            {...(external
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+          />
+        }
       >
         {secondaryCta}
       </Button>
@@ -84,7 +96,12 @@ const defaultStats = [
   { label: "Figma", sub: "motion context MCP" },
 ] as const;
 
-function HeroDefaultView(copy: HeroCopy & { stats: readonly { label: string; sub: string }[] }) {
+function HeroDefaultView(
+  copy: HeroCopy & {
+    stats: readonly { label: string; sub: string }[];
+    secondaryHref?: string;
+  },
+) {
   return (
     <section id="hero" className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden px-6 pb-16 pt-28 md:px-16">
       <CursorGlow />
@@ -119,7 +136,11 @@ function HeroDefaultView(copy: HeroCopy & { stats: readonly { label: string; sub
           {copy.description}
         </motion.p>
 
-        <HeroActions primaryCta={copy.primaryCta} secondaryCta={copy.secondaryCta} />
+        <HeroActions
+          primaryCta={copy.primaryCta}
+          secondaryCta={copy.secondaryCta}
+          secondaryHref={copy.secondaryHref}
+        />
       </StaggerChildren>
 
       <motion.div
@@ -149,7 +170,7 @@ function HeroDefaultView(copy: HeroCopy & { stats: readonly { label: string; sub
  * Brand-first full-bleed hero — no stat cards, no inset media.
  * Eyebrow (brand) is the dominant signal; title is supporting copy.
  */
-function HeroEditorialView(copy: HeroCopy) {
+function HeroEditorialView(copy: HeroCopy & { secondaryHref?: string }) {
   return (
     <section
       id="hero"
@@ -185,7 +206,11 @@ function HeroEditorialView(copy: HeroCopy) {
           {copy.description}
         </motion.p>
 
-        <HeroActions primaryCta={copy.primaryCta} secondaryCta={copy.secondaryCta} />
+        <HeroActions
+          primaryCta={copy.primaryCta}
+          secondaryCta={copy.secondaryCta}
+          secondaryHref={copy.secondaryHref}
+        />
       </StaggerChildren>
     </section>
   );
@@ -194,13 +219,14 @@ function HeroEditorialView(copy: HeroCopy) {
 type HeroViewProps = HeroCopy & {
   stats: readonly { label: string; sub: string }[];
   variant: HeroVariant;
+  secondaryHref?: string;
 };
 
-function HeroSectionView({ variant, stats, ...copy }: HeroViewProps) {
+function HeroSectionView({ variant, stats, secondaryHref, ...copy }: HeroViewProps) {
   if (variant === "editorial") {
-    return <HeroEditorialView {...copy} />;
+    return <HeroEditorialView {...copy} secondaryHref={secondaryHref} />;
   }
-  return <HeroDefaultView {...copy} stats={stats} />;
+  return <HeroDefaultView {...copy} stats={stats} secondaryHref={secondaryHref} />;
 }
 
 /** CMS branch — only mounted when siteFeatures.cms is true (requires ConvexProvider). */
@@ -222,7 +248,14 @@ function HeroSectionWithCms(props: HeroSectionProps) {
     secondaryCta: fallback.secondaryCta,
   };
 
-  return <HeroSectionView {...copy} stats={stats} variant={variant} />;
+  return (
+    <HeroSectionView
+      {...copy}
+      stats={stats}
+      variant={variant}
+      secondaryHref={props.secondaryHref}
+    />
+  );
 }
 
 /**
@@ -239,6 +272,11 @@ export function HeroSection(props: HeroSectionProps = {}) {
   }
 
   return (
-    <HeroSectionView {...resolveCopy(props)} stats={stats} variant={variant} />
+    <HeroSectionView
+      {...resolveCopy(props)}
+      stats={stats}
+      variant={variant}
+      secondaryHref={props.secondaryHref}
+    />
   );
 }

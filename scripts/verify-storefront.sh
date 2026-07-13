@@ -67,6 +67,7 @@ echo ""
 check_patterns "home RU" "$BASE" \
   'lang="ru"' \
   "Переключить тему" \
+  "site-ref-launch.vercel.app" \
   "Как устроено" \
   "Пакеты" \
   "Flash" \

@@ -15,6 +15,7 @@ npm install
 npm run dev                    # http://localhost:3000
 npm run qa
 npm run verify:storefront      # prod smoke (после деплоя)
+npm run storefront:health      # verify:storefront + verify:lead-api
 ```
 
 ## Ship

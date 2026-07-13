@@ -27,6 +27,7 @@
     "title": "Живой анимированный сайт по запросу",
     "description": "Бриф → пресет → проверка → живой URL. Next.js, Framer Motion и GSAP из каталога — код принадлежит вам, не редактору.",
     "primaryCta": "Оставить бриф",
-    "secondaryCta": "Смотреть примеры"
+    "secondaryCta": "Смотреть примеры",
+    "secondaryHref": "https://site-ref-launch.vercel.app"
   }
 }

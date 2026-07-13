@@ -69,8 +69,7 @@ else
   vercel_cmd deploy --prebuilt --prod --yes
 fi
 
-echo ""
 echo "✓ Done. Verify:"
 echo "  npm run domain:verify -- $URL"
-echo "  open $URL/ru"
+echo "  open $URL"
 echo "  curl -sI $URL | head -1"
