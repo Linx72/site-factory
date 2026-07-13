@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/layout/page-shell";
+import Link from "next/link";
 import { CmsPanel } from "@/components/status/cms-panel";
 import { LeadsPanel } from "@/components/status/leads-panel";
 import { SeedAllPanel } from "@/components/status/seed-all-panel";
@@ -31,6 +32,20 @@ export function StatusPageView({
         <div className="mx-auto max-w-xl space-y-4 px-6 py-16 md:px-16">
           <h1 className="text-2xl font-semibold tracking-tight">{copy.title}</h1>
           <p className="text-muted-foreground">{copy.convexDisabled}</p>
+          <p className="text-sm text-muted-foreground">
+            <Link href="/#contact" className="underline underline-offset-4 hover:text-foreground">
+              Форма брифа на главной
+            </Link>
+            {" · "}
+            <a
+              href="https://github.com/Linx72/site-factory"
+              className="underline underline-offset-4 hover:text-foreground"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Репозиторий
+            </a>
+          </p>
         </div>
       </PageShell>
     );

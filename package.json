@@ -36,6 +36,7 @@
     "push:references": "bash scripts/push-reference-repos.sh",
     "factory:health": "bash scripts/factory-health.sh",
     "verify:live": "bash scripts/verify-live.sh",
+    "verify:storefront": "bash scripts/verify-storefront.sh",
     "verify:sitemap": "node scripts/verify-sitemap-urls.mjs",
     "verify:messages": "node scripts/verify-messages-parity.mjs",
     "verify:brief": "node scripts/verify-brief.mjs",

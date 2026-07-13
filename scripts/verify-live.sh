@@ -41,6 +41,8 @@ check "demo-studio OG" "https://demo-studio-orpin.vercel.app/opengraph-image"
 check "saas-ref" "https://site-ref-saas.vercel.app"
 check "agency-ref" "https://site-ref-agency.vercel.app"
 check "launch-ref" "https://site-ref-launch.vercel.app"
+check "site-factory" "https://site-factory-hq.vercel.app"
+check "site-factory /about" "https://site-factory-hq.vercel.app/about"
 check "client-flowstack" "https://client-flowstack.vercel.app"
 
 echo ""

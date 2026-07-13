@@ -88,9 +88,9 @@ export const CMS_EDITOR_FIELD_IDS = [
 ] as const;
 
 export const defaultStatusPageCopy: StatusPageCopy = {
-  title: "Status",
+  title: "Статус",
   convexDisabled:
-    "Convex is not configured for this build. Set NEXT_PUBLIC_CONVEX_URL and run npm run dev:convex to enable live panels.",
+    "Convex не подключён — форма на главной работает через mailto. Для живых leads: npx convex login → npm run convex:init -- --prod → npm run convex:vercel -- <URL>. Локально: npm run dev:convex + npm run dev.",
   seedAll: {
     title: "Dev tools",
     hint: "Populate all demo tables at once. Set ALLOW_DEV_SEED=true in Convex env first.",
