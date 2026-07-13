@@ -9,8 +9,8 @@ import { siteFeatures } from "@/lib/site-config";
 import { notFound, redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Terms of service — Web Motion Starter",
-  description: "Terms of service for this Site Factory demo",
+  title: "Условия — Site Factory",
+  description: "Условия использования витрины Site Factory",
 };
 
 /** Terms — redirects to /en/terms when i18n is on. */

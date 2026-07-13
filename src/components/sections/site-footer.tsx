@@ -5,6 +5,7 @@ import {
   type FooterCopy,
   type NavLinkCopy,
 } from "@/lib/i18n/section-copy";
+import { isPageEnabled } from "@/lib/site-pages";
 import { getNavLinks } from "@/lib/site-content";
 
 type SiteFooterProps = {
@@ -35,7 +36,12 @@ export function SiteFooter({
           <Link href={copy.motionLabHref} className="hover:text-foreground">
             {copy.motionLab}
           </Link>
-          {copy.blog && copy.blogHref ? (
+          {isPageEnabled("about") && copy.about && copy.aboutHref ? (
+            <Link href={copy.aboutHref} className="hover:text-foreground">
+              {copy.about}
+            </Link>
+          ) : null}
+          {isPageEnabled("blog-index") && copy.blog && copy.blogHref ? (
             <Link href={copy.blogHref} className="hover:text-foreground">
               {copy.blog}
             </Link>

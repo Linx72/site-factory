@@ -68,7 +68,7 @@ function buildDefaultNavLinks(): NavLinkCopy[] {
     const key = link.href.slice(1) as keyof typeof defaultNavLabels;
     return {
       href: link.href,
-      label: defaultNavLabels[key] ?? link.label,
+      label: link.label ?? defaultNavLabels[key] ?? link.href,
     };
   });
 }
@@ -284,7 +284,7 @@ export function getDefaultHomeSectionCopy(): HomeSectionCopy {
     features: defaultFeaturesCopy,
     pricing: defaultPricingCopy,
     faq: {
-      title: "Frequently asked questions",
+      title: "Частые вопросы",
       items: defaultFaqItems,
     },
     contact: defaultContactCopy,

@@ -2,6 +2,7 @@
  * Build Legal.* copy from next-intl translator.
  */
 import type { LegalDocumentCopy } from "@/components/sections/legal-document-section";
+import { siteConfig } from "@/lib/site-config";
 
 type Translator = (key: string) => string;
 
@@ -28,60 +29,60 @@ export function buildLegalDocument(
 export function getDefaultLegalDocument(kind: "privacy" | "terms"): LegalDocumentCopy {
   if (kind === "privacy") {
     return {
-      title: "Privacy policy",
-      updatedLabel: "Last updated",
+      title: "Политика конфиденциальности",
+      updatedLabel: "Обновлено",
       updatedDate: "2026-07-13",
-      backHome: "← Back to home",
+      backHome: "← На главную",
       sections: [
         {
-          heading: "Overview",
-          body: "This demo template explains how a Site Factory project may handle information. Replace with your counsel-approved policy before production use.",
+          heading: "Обзор",
+          body: "Site Factory собирает сайты на Next.js. Эта страница описывает, какие данные может обрабатывать ваш лендинг на стеке фабрики. Перед продом замените текст на версию, согласованную с юристом.",
         },
         {
-          heading: "Data we collect",
-          body: "If Convex contact is enabled, we store email addresses submitted on the contact form in the leads table. Payment data is processed by Stripe when checkout is configured — we do not store card numbers on our servers.",
+          heading: "Какие данные",
+          body: "При включённом Convex email из формы контакта сохраняется в таблице leads. Платежи обрабатывает Stripe — номера карт мы не храним. Без Convex заявка уходит через mailto на адрес оператора сайта.",
         },
         {
           heading: "Cookies",
-          body: "We may use essential cookies for theme preference and session. Analytics cookies only run when an analytics feature flag is enabled.",
+          body: "Используются технические cookies для темы и сессии. Аналитика — только при включённом флаге NEXT_PUBLIC_ANALYTICS.",
         },
         {
-          heading: "Your rights",
-          body: "You may request access or deletion of lead records by contacting the site operator. Replace this section with jurisdiction-specific rights.",
+          heading: "Ваши права",
+          body: "Вы можете запросить доступ или удаление записи в leads у оператора сайта. Дополните раздел правами по вашей юрисдикции.",
         },
         {
-          heading: "Contact",
-          body: "Update this section with your privacy contact email.",
+          heading: "Контакт",
+          body: `По вопросам данных: ${siteConfig.contactEmail}`,
         },
       ],
     };
   }
 
   return {
-    title: "Terms of service",
-    updatedLabel: "Last updated",
+    title: "Условия использования",
+    updatedLabel: "Обновлено",
     updatedDate: "2026-07-13",
-    backHome: "← Back to home",
+    backHome: "← На главную",
     sections: [
       {
-        heading: "Agreement",
-        body: "By using this demo site you agree to these placeholder terms. Replace with your legal terms before offering paid services.",
+        heading: "Соглашение",
+        body: "Используя сайт Site Factory, вы соглашаетесь с этими условиями. Для коммерческих услуг замените текст на договор/оферту с юристом.",
       },
       {
-        heading: "Acceptable use",
-        body: "Do not misuse forms, attempt to disrupt the service, or use the site for unlawful purposes.",
+        heading: "Допустимое использование",
+        body: "Не злоупотребляйте формами, не пытайтесь нарушить работу сервиса и не используйте сайт в незаконных целях.",
       },
       {
-        heading: "Liability",
-        body: "The template is provided as-is for demonstration. Limit liability according to your counsel’s advice.",
+        heading: "Ответственность",
+        body: "Шаблон и витрина предоставляются как есть. Ограничение ответственности — по согласованию с вашим counsel.",
       },
       {
-        heading: "Changes",
-        body: "We may update these terms; the date above reflects the latest revision of this demo copy.",
+        heading: "Изменения",
+        body: "Условия могут обновляться; дата выше отражает актуальную редакцию демо-копии.",
       },
       {
-        heading: "Contact",
-        body: "Questions about these terms: replace with your support email.",
+        heading: "Контакт",
+        body: `Вопросы по условиям: ${siteConfig.contactEmail}`,
       },
     ],
   };

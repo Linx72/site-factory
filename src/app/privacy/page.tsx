@@ -9,8 +9,8 @@ import { siteFeatures } from "@/lib/site-config";
 import { notFound, redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Privacy policy — Web Motion Starter",
-  description: "Privacy policy for this Site Factory demo",
+  title: "Конфиденциальность — Site Factory",
+  description: "Политика конфиденциальности витрины Site Factory",
 };
 
 /** Privacy — redirects to /en/privacy when i18n is on. */

@@ -140,6 +140,8 @@ export type FooterCopy = {
   terms?: string;
   privacyHref?: string;
   termsHref?: string;
+  about?: string;
+  aboutHref?: string;
   blog?: string;
   blogHref?: string;
 };
@@ -685,20 +687,20 @@ export const defaultFooterCopy: FooterCopy = {
   motionLab: "Motion lab",
   statusHref: "/status",
   motionLabHref: "/motion",
+  about: "О фабрике",
+  aboutHref: "/about",
   privacy: "Конфиденциальность",
   terms: "Условия",
   privacyHref: "/privacy",
   termsHref: "/terms",
-  blog: "Blog",
-  blogHref: "/blog",
 };
 
 export const defaultNavLabels: Record<(typeof NAV_LINK_KEYS)[number], string> = {
-  features: "Features",
-  story: "Story",
-  testimonials: "Reviews",
-  pricing: "Pricing",
-  contact: "Contact",
+  features: "Как устроено",
+  story: "История",
+  testimonials: "Отзывы",
+  pricing: "Пакеты",
+  contact: "Бриф",
   faq: "FAQ",
   ui: "UI",
 };
