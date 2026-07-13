@@ -8,6 +8,7 @@ import {
   type PricingCheckoutCopy,
 } from "@/lib/i18n/section-copy";
 import { Button } from "@/components/ui/button";
+import { BRIEF_PACKAGE_STORAGE_KEY } from "@/lib/brief-package";
 import { siteFeatures, getSingleLocale } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
@@ -41,6 +42,11 @@ export function CheckoutButton({
     setError(null);
 
     if (planId === "starter" || !siteFeatures.stripe) {
+      try {
+        sessionStorage.setItem(BRIEF_PACKAGE_STORAGE_KEY, planName);
+      } catch {
+        /* private mode */
+      }
       document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
       return;
     }

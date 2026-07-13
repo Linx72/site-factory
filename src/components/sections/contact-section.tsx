@@ -11,6 +11,11 @@ import {
   defaultContactCopy,
   type ContactSectionCopy,
 } from "@/lib/i18n/section-copy";
+import {
+  BRIEF_PACKAGE_STORAGE_KEY,
+  formatBriefPackageLine,
+  readPackageFromSearch,
+} from "@/lib/brief-package";
 import { siteConfig, siteFeatures } from "@/lib/site-config";
 import { api } from "../../../convex/_generated/api";
 
@@ -36,7 +41,20 @@ function buildMailtoHref(
 /** Email + brief — Resend API, mailto, or Convex (when configured). */
 function ContactFormStatic({ copy }: { copy: ContactSectionCopy }) {
   const [email, setEmail] = useState("");
-  const [brief, setBrief] = useState("");
+  const [brief, setBrief] = useState(() => {
+    if (typeof window === "undefined") return "";
+    let planName: string | null = null;
+    try {
+      planName = sessionStorage.getItem(BRIEF_PACKAGE_STORAGE_KEY);
+      if (planName) {
+        sessionStorage.removeItem(BRIEF_PACKAGE_STORAGE_KEY);
+      }
+    } catch {
+      /* private mode */
+    }
+    planName ??= readPackageFromSearch();
+    return planName ? formatBriefPackageLine(planName) : "";
+  });
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">(
     "idle",
   );
